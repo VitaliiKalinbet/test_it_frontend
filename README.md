@@ -2,13 +2,13 @@
 
 ================short rules for working with this repository for developers================
 1) Клонируете себе на машину репозиторий: 
-git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
+1.1) git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
 2) Закрываете консоль и открываете ее в созданной после клонирования папке (или cd test_it_frontend). Создаете ветку с названием компонента который будете делать, например: 
-git checkout -b Home
+2.1) git checkout -b Home
 3) Работаете в ветке например (Home), первая отправка файлов на репозиторий: 
-git add .
-git commit -m "some text"
-git push --set-upstream origin Home       (при повторных отправках на этом шаге просто - git push) 
+3.1) git add .
+3.2) git commit -m "some text"
+3.3) git push --set-upstream origin Home       (при повторных отправках на этом шаге просто - git push) 
 
 
 =================INFORMATION FOR DEVELOPERS===================
