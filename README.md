@@ -1,6 +1,6 @@
 # Проект TEST_IT
 
-============================short rules for working with this repository for developers==============================
+================short rules for working with this repository for developers================
 1) Клонируете себе на машину репозиторий: 
 git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
 2) Закрываете консоль и открываете ее в созданной после клонирования папке (или cd test_it_frontend). Создаете ветку с названием компонента который будете делать, например: 
@@ -11,7 +11,7 @@ git commit -m "some text"
 git push --set-upstream origin Home       (при повторных отправках на этом шаге просто - git push) 
 
 
-===========================================INFORMATION FOR DEVELOPERS===============================================
+=================INFORMATION FOR DEVELOPERS===================
 В компонент App.jsx подключены 4 страницы согласно макета home.psd это HomePage.jsx, page-1.psd это InstructionPage.jsx, page-2(3).psd это TestPage.jsx, result.psd это ResultPage.jsx. Подключен роутинг, в зависимости от окончания url, страницы переключаются, переходы между страницами реализуйте у себя с помощью <NavLink to='/…'>.
 Макеты тут: 
 https://drive.google.com/drive/folders/1KQrr1w8U9VyH-qVJqQ5icF_ywVw81Nnb
