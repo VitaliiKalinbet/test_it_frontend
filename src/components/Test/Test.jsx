@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
-import style from './Test.module.css';
+import React from "react";
+import QuestionButton from "../Test/QuestionButton";
 
-class Test extends Component {
-  render() {
-    return (
-      <div className={style.test}>
-        
-      </div>
-    );
-  }
-}
+const Test = ({ item: { questionTitle = "", answers = [] }, setAnswer }) => {
+  return (
+    <div>
+      <h3>{questionTitle}</h3>
+      {answers.map(answer => (
+        <QuestionButton
+          text={answer.answerTitle}
+          index={answer.typeProfession}
+          key={answer._id}
+          setAnswer={setAnswer}
+        />
+      ))}
+    </div>
+  );
+};
 
 export default Test;
