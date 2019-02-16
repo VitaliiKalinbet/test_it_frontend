@@ -1,24 +1,18 @@
 // Core 
 import React from 'react';
 
-// Instruments
-// export const test = {
-//     title: 'Задачи',
-//     checkbox: [ 
-//             'планирование процес тестирования', 
-//             'выполнять ручные тестирования web приложением', 
-//             'выполнять рeчные тестирования мобильных пиложений', 
-//             'вести тестовую документации', ]
-// }
-
-const Task = (data) => {
+const Task = ({ title, id, profile, text, tasks}) => {
     return (
         <div>
             <h2> Title: {title}</h2>
-            <p>profile: {profile}</p>
+            <p> Profile: {profile}</p>
+            <p>{text}</p>
             <ul>
-                {/* {name.map(()=>{<li key={id}><input type="checkbox" checked />{tasks}</li>})} */}
-              
+                {
+                    tasks.map(task =>(
+                        <li key={id}><input type="checkbox" checked />{task}</li>
+                        ))
+                }
             </ul>
         </div>
     );
