@@ -37,6 +37,6 @@ const Home = () => {
     <Particles params={part} />
     </div>
   );
-};
+}; 
 
 export default Home;

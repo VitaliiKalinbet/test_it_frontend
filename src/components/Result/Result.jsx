@@ -1,7 +1,6 @@
 // Core
 import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
-
 // Components
 import Task from './Task';
 import Links from './Links';
