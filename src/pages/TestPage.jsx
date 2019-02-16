@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Progress } from "react-sweet-progress";
+import { ResultContext } from "../context/ResultContext";
 
 import Test from "../components/Test/Test";
 import PrevQuestionButton from "../components/Test/PrevQuestionButton";
@@ -13,6 +14,8 @@ import style from "./TestPage.module.css";
 // import data from "./data.json";
 
 class TestPage extends Component {
+  static contextType = ResultContext;
+
   state = { currentQuestion: 1, answers: [], errorMessage: "" };
 
   componentDidMount() {
@@ -28,11 +31,12 @@ class TestPage extends Component {
   };
 
   handleSetResults = () => {
-    const { answers, userAnswerId } = this.state;
+    const { answers, userAnswersId } = this.state;
+    const { updateResults } = this.context;
 
     api
-      .setResuts({ answers, userAnswerId })
-      .then(resp => console.log(resp))
+      .setResuts({ answers, userAnswersId })
+      .then(resp => updateResults(resp.data))
       .catch(err => console.log(err));
   };
 
@@ -73,8 +77,6 @@ class TestPage extends Component {
       };
     });
   };
-
-  handleIsSelectedAnswer = answer => {};
 
   handleSetAnswer = (variant, id) => {
     const { currentQuestion, question } = this.state;
