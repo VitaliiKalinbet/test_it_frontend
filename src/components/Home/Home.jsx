@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import Particles from 'react-particles-js';
 
 // Instruments
-import {home} from '../../languages/ru/Home'
+import { home } from '../../languages/ru/Home'
 import style from './Home.module.css'
 
 const part = {
