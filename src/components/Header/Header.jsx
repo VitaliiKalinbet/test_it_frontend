@@ -16,10 +16,10 @@ const Header = () => {
 
               <span> test </span>
         </div>
-        <div className={style.Login}>
+        {/* <div className={style.Login}>
               <span> Логин   &#9776; </span>
   
-        </div>
+        </div> */}
       </div>
     </header>
   );

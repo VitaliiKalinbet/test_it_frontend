@@ -25,6 +25,7 @@ class App extends Component {
         <ResultContext.Provider
           value={{ results, updateResults: this.handleUpdateResults }}
         >
+        <Header/>
           <Switch>
             <Route exact path="/" component={HomePage} />
             <Route path="/instruction" component={InstructionPage} />
