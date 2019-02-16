@@ -1,12 +1,13 @@
 // Core
 import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
-// COmponents
+
+// Components
 import Task from './Task';
+import Links from './Links';
 
 // Instruments
 import style from './Result.module.css';
-import qa from './qa.json';
 
 const title = ['Результаты тестирования'];
 
@@ -27,23 +28,25 @@ const options = {
  export default class Result extends Component {
   state = {
       dataPie: {
-        labels: [	'FRONT-END','BACK-END',	'QA', 'MENEGER'	],
+        labels: [	'FRONT-END','BACK-END',	'QA', 'MANEGER'	],
         datasets: [ {
             data: [15, 30, 25, 10],
             backgroundColor: [ '#75ffff','#a44deb','#f5a623', '#f3a82d51'],
             hoverBackgroundColor: [ '#75ffff','#a44deb','#f5a623', '#f3a82d51']
-          } ]
+          },
+     ],
       },
   }
   render() {
     const  {dataPie} = this.state;
     return (
           <div className={style.wrapper}>
-            <div className={style.resultsBox}>
+            <div className={style.wrapperShadow}>
               <h1 className={style.title}>{title}</h1>
               <Pie data={dataPie} options={options}/>
             </div>
-            <Task data={qa} />
+            <Task />
+            <Links />
           </div>
     );
   }

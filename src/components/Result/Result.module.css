@@ -5,7 +5,7 @@
     width:800px;
     margin: 30px auto;
 }
-.resultsBox{
+.wrapperShadow{
     background-color: #fff;
     padding: 40px;
     margin: 0 auto;
@@ -20,10 +20,11 @@
 }
 .titleParagraph{
     text-align: center;
+    font-size: 24px;
     margin: 40px;
 }
 .paragraph{
-  line-height: 30px;
+    line-height: 30px;
 
 }
 input[type=checkbox] + label {
@@ -89,5 +90,37 @@ input[type=checkbox]:checked:disabled + label:before {
     text-decoration: none;
 }
 .btn:hover{
+    background-color: var(--squash);
+}
+.shareFB{
+    position: relative;
+}
+.inputEmail{
+    outline: none;
+    width: 350px;
+    padding: 15px 20px;
+    margin: 0 auto;
+    font-size: 16px;
+    border-radius: 30px;
+    border: 1px solid #00000040;
+    display: block;
+}
+
+.inputEmail:focus{
+    box-shadow: 1px 1px 9px #00000020;
+}
+.inputSubmit{
+    position: absolute;
+    right: 165px;
+    top: 0px;
+    padding: 10px 25px;
+    background: var(--macaroni-and-cheese);
+    font-size: 24px;
+    color: #fff;
+    border-radius: 40px;
+    outline: none;
+    cursor: pointer;
+}
+.inputSubmit:hover{
     background-color: var(--squash);
 }
