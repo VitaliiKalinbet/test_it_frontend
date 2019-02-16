@@ -1,3 +1,65 @@
+@import '../../theme/palette.modules.css';
+.wrapper{
+    width:800px;
+    margin: 30px auto;
+}
+.resultsBox{
+    background-color: #fff;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 13px #00000040;
+}
+.title{
+    color: var(--text-logo);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 60px 0;
+    background: linear-gradient(120deg, #6039aa, #180733);
+}
+
+
 /* .test {
+input[type=checkbox], input[type=radio] {display: none;}
+
+input[type=checkbox] + label:before {
+    content: "\2713";
+    color: transparent;
+    display: inline-block;
+  
+    border: 1px solid #000;
+    font-size: 20px;    
+    line-height: 22px;
+    margin: -5px 5px 0 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+  background-color: #333;
+    transition: color ease .3s;
+}
+
+input[type=checkbox]:checked + label:before {
+    color: #000;
+}
+
+input[type=radio] + label:before {
+    content: "\26AB";
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px solid #000;
+    font-size: 20px;    
+    line-height: 20px;
+    margin: -5px 5px 0 0;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0;    
+    transition: font-size ease .3s;
+}
+input[type=radio]:checked + label:before {
+    font-size: 20px;    
+}
 
 } */
