@@ -8,11 +8,11 @@ const Task = ({ title, id, profile, text, tasks}) => {
             <p> Profile: {profile}</p>
             <p>{text}</p>
             <ul>
-                {
+                {/* {
                     tasks.map(task =>(
                         <li key={id}><input type="checkbox" checked />{task}</li>
                         ))
-                }
+                } */}
             </ul>
         </div>
     );

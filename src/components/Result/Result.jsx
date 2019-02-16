@@ -6,14 +6,17 @@ import Task from './Task';
 
 import style from './Result.module.css';
 
+const title = ['Результаты тестирования'];
 const options = {
   maintainAspectRatio: false,
-  responsive: false,
+  responsive: true,
   legend: {
     position: 'bottom',
     labels: {
-      boxWidth: 13,
-      padding: 10
+      boxWidth: 20,
+      padding: 90,
+      fontSize: 16
+      
     }
   }
 }
@@ -31,11 +34,12 @@ const options = {
   render() {
     const  {dataPie} = this.state;
     return (
-          <div className={style.test}>
-            <h1>Results</h1>
-            <div style={{ height: '500px', width: '500px', margin: '0 auto'}}>
+          <div className={style.wrapper}>
+            <div className={style.resultsBox}>
+              <h1 className={style.title}>{title}</h1>
               <Pie data={dataPie} options={options}/>
             </div>
+
             <Task />
           </div>
     );

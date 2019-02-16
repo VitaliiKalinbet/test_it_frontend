@@ -1,6 +1,24 @@
+@import '../../theme/palette.modules.css';
+.wrapper{
+    width:800px;
+    margin: 30px auto;
+}
+.resultsBox{
+    background-color: #fff;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 13px #00000040;
+}
+.title{
+    color: var(--text-logo);
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 60px 0;
+    background: linear-gradient(120deg, #6039aa, #180733);
+}
+
+
 /* .test {
-
-
 input[type=checkbox], input[type=radio] {display: none;}
 
 input[type=checkbox] + label:before {
