@@ -36,6 +36,7 @@ const options = {
      ],
       },
   }
+  
   render() {
     const  {dataPie} = this.state;
     return (
