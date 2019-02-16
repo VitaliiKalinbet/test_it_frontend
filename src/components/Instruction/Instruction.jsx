@@ -12,10 +12,10 @@ const Instructions = () => {
           <h1 className={style.title}> {instruction.title}</h1>
           <p>{instruction.post}</p>
         </div>
-        <div className={style.wrapper_btn}>          
-            <NavLink className={style.btn} to="/test" >
+        <div className={style.wrapper_btn}>
+          <NavLink className={style.btn} to="/test">
             перейти к вопросам
-            </NavLink>
+          </NavLink>
         </div>
       </div>
     </div>
