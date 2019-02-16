@@ -1,56 +1,72 @@
 // Core
-import React, { Component } from 'react';
-import { Pie } from 'react-chartjs-2';
+import React, { Component } from "react";
+import { Pie } from "react-chartjs-2";
 // Components
-import Task from './Task';
-import Links from './Links';
+import Task from "./Task";
+import Links from "./Links";
 
 // Instruments
-import style from './Result.module.css';
+import style from "./Result.module.css";
 
-const title = ['Результаты тестирования'];
+const title = ["Результаты тестирования"];
 
 const options = {
   // maintainAspectRatio: false,
   // responsive: true,
   legend: {
-    position: 'bottom',
+    position: "bottom",
     labels: {
       boxWidth: 20,
       padding: 30,
       fontSize: 16
-      
     }
   }
-}
+};
 
- export default class Result extends Component {
+export default class Result extends Component {
   state = {
-      dataPie: {
-        labels: [	'FRONT-END','BACK-END',	'QA', 'MANEGER'	],
-        datasets: [ {
-            data: [15, 30, 25, 10],
-            backgroundColor: [ '#75ffff','#a44deb','#f5a623', '#f3a82d51'],
-            hoverBackgroundColor: [ '#75ffff','#a44deb','#f5a623', '#f3a82d51']
-          },
-     ],
-      },
+    dataPie: {
+      labels: ["FRONT-END", "BACK-END", "QA", "MANEGER"],
+      datasets: [
+        {
+          data: [15, 30, 25, 10],
+          backgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"],
+          hoverBackgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"]
+        }
+      ]
+    }
+  };
+
+  handleSetResults = () => {
+    console.log(this.props);
+    const { frontend, backend, tester, manager } = this.props.results;
+
+    const newArr = [frontend, backend, tester, manager];
+    console.log(newArr);
+
+    this.setState(prevState => {
+      return (prevState.dataPie.datasets[0].data = [...newArr]);
+    });
+  };
+
+  componentDidUMount() {
+    this.handleSetResults();
   }
-  
+
   render() {
-    const  {dataPie} = this.state;
+    const { dataPie } = this.state;
     return (
-          <div className={style.wrapper}>
-            <div className={style.wrapperShadow}>
-              <h1 className={style.title}>{title}</h1>
-              <Pie data={dataPie} options={options}/>
-            </div>
-            <Task />
-            <Links />
-          </div>
+      <div className={style.wrapper}>
+        <div className={style.wrapperShadow}>
+          <h1 className={style.title}>{title}</h1>
+          <Pie data={dataPie} options={options} />
+        </div>
+        <Task />
+        <Links />
+      </div>
     );
   }
-};
+}
 
 // https://github.com/jerairrest/react-chartjs-2/issues/214
 // https://github.com/jerairrest/react-chartjs-2/issues/214
