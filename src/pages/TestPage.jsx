@@ -1,4 +1,4 @@
-import React, { Component, createRef } from "react";
+import React, { Component } from "react";
 import { Progress } from "react-sweet-progress";
 
 import Test from "../components/Test/Test";
@@ -10,45 +10,10 @@ import * as api from "../services/api";
 import "react-sweet-progress/lib/style.css";
 import style from "./TestPage.module.css";
 
-const INITIAL_STATE = {
-  item: {
-    _id: {
-      $oid: "5c6712ba0c8b70803285cca3"
-    },
-    questionTitle: "Выберите, что Вашему ребенку больше нравиться делать:",
-    answers: [
-      {
-        _id: "5c6712ba0c8b70803285cca7",
-        typeProfession: "tester",
-        answerTitle: "Разбираться в чертежах и схемах"
-      },
-      {
-        _id: "5c6712ba0c8b70803285cca6",
-        typeProfession: "frontEnd",
-        answerTitle: "Помогать решать конфликты и споры между людьми"
-      },
-      {
-        _id: "5c6712ba0c8b70803285cca5",
-        typeProfession: "backEnd",
-        answerTitle: "Разбираться в чертежах и схемах"
-      },
-      {
-        _id: "5c6712ba0c8b70803285cca4",
-        typeProfession: "manager",
-        answerTitle: "Помогать решать конфликты и споры между людьми"
-      }
-    ],
-    __v: 0
-  },
-  totalQuestions: 20,
-  currentQuestion: 1,
-  currentAnswer: ""
-};
+// import data from "./data.json";
 
 class TestPage extends Component {
-  containerRef = createRef();
-
-  state = { ...INITIAL_STATE };
+  state = { currentQuestion: 1, answers: [], errorMessage: "" };
 
   componentDidMount() {
     this.handleGetFirstQuestion();
@@ -57,50 +22,88 @@ class TestPage extends Component {
   handleGetFirstQuestion = () => {
     api.getFirstQuestion().then(({ data }) => {
       this.setState({
-        item: data.question
+        ...data
       });
     });
   };
 
-  handleNextQuestion = () => {
-    const { currentQuestion, totalQuestions } = this.state;
+  handleSetResults = () => {
+    const { answers, userAnswerId } = this.state;
 
-    api.getNextQuestion(currentQuestion + 1).then(({ data }) => {
+    api
+      .setResuts({ answers, userAnswerId })
+      .then(resp => console.log(resp))
+      .catch(err => console.log(err));
+  };
+
+  handleNextQuestion = () => {
+    const { currentQuestion, question = [] } = this.state;
+
+    const totalQuestions = question.length;
+
+    const isSelectedAnswer = question.find(
+      el => el.questionNumber === currentQuestion
+    );
+
+    if (!isSelectedAnswer.answerId) {
       this.setState({
-        item: data.question
+        errorMessage: "Выберите вариант ответа!"
       });
-    });
+      return;
+    }
 
     this.setState(prevState => {
-      return { currentQuestion: prevState.currentQuestion + 1 };
+      return {
+        currentQuestion: prevState.currentQuestion + 1,
+        errorMessage: ""
+      };
     });
 
     if (currentQuestion === totalQuestions) {
+      this.handleSetResults();
       this.props.history.replace("/result");
     }
   };
 
   handlePrevQuestion = () => {
-    const { currentQuestion } = this.state;
-
-    api.getNextQuestion(currentQuestion - 1).then(({ data }) => {
-      this.setState({
-        item: data.question
-      });
-    });
     this.setState(prevState => {
-      return { currentQuestion: prevState.currentQuestion - 1 };
+      return {
+        currentQuestion: prevState.currentQuestion - 1,
+        errorMessage: ""
+      };
     });
   };
 
-  handleSetAnswer = e => {
-    this.setState({
-      currentAnswer: e.currentTarget.attributes.name.value
+  handleIsSelectedAnswer = answer => {};
+
+  handleSetAnswer = (variant, id) => {
+    const { currentQuestion, question } = this.state;
+    const currentQuestionId = question.find(
+      el => el.questionNumber === currentQuestion
+    )._id;
+    this.setState(prevState => {
+      const filteredAswers = prevState.answers.filter(
+        el => el.questionId !== currentQuestionId
+      );
+
+      prevState.answers = [
+        ...filteredAswers,
+        { questionId: currentQuestionId, typeProfession: variant }
+      ];
+      const nextState = { ...prevState };
+
+      prevState.question.map(el =>
+        el._id === currentQuestionId ? (el.answerId = id) : false
+      );
+
+      return nextState;
     });
   };
 
   render() {
-    const { totalQuestions, currentQuestion } = this.state;
+    const { currentQuestion = 1, question = [], errorMessage } = this.state;
+
+    const totalQuestions = question.length;
 
     const progressPercent =
       currentQuestion <= totalQuestions
@@ -113,7 +116,18 @@ class TestPage extends Component {
           {currentQuestion} / {totalQuestions}
         </span>
         <Progress percent={progressPercent} status="success" />
-        <Test {...this.state} setAnswer={this.handleSetAnswer} />
+        {errorMessage && <p>{errorMessage}</p>}
+        {question.map(
+          el =>
+            el.questionNumber === currentQuestion && (
+              <Test
+                {...el}
+                selectedAnswer={el.answerId}
+                key={el._id}
+                setAnswer={this.handleSetAnswer}
+              />
+            )
+        )}
         {currentQuestion > 1 && (
           <PrevQuestionButton prevQuestion={this.handlePrevQuestion} />
         )}

@@ -7,6 +7,21 @@ export const getFirstQuestion = async () => {
   return response;
 };
 
+export const setResuts = async ({ data }) => {
+  console.log(data);
+  const headers = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
+  const response = axios.put("/answer", {
+    headers,
+    body: data
+  });
+
+  return response;
+};
+
 export const getNextQuestion = async id => {
   const response = axios.get(`/question/${id}`);
   return response;
