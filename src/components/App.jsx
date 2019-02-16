@@ -6,6 +6,8 @@ import TestPage from "../pages/TestPage";
 import ResultPage from "../pages/ResultPage";
 import style from "./App.module.css";
 import { ResultContext } from "../context/ResultContext";
+import Header from './Header/Header';
+
 class App extends Component {
   state = {
     results: []
