@@ -123,3 +123,8 @@ input[type=checkbox]:checked:disabled + label:before {
 .inputSubmit:hover{
     background-color: var(--squash);
 }
+
+.facebookBtnContainer {
+    display: flex;
+    justify-content: center;
+}
