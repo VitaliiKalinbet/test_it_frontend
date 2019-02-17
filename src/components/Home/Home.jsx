@@ -28,16 +28,18 @@ const part = {
 const Home = () => {
   return (
     <div className={style.Home}>
-      <Particles params={part} />
+      <div className={style.canvasWrap}>
+        <Particles params={part} />
+      </div>
+      {/* <Particles params={part} /> */}
       <div className={style.postWrap}>
         <h1 className={style.title}> {home.title}</h1>
         <p className={style.post}>{home.post}</p>
-				<div className={style.btnWrap}> 
-				<Link to="/instruction" className={style.btn}>
-          Начать тестирование
-        </Link>
-				</div>
-       
+        <div className={style.btnWrap}>
+          <Link to="/instruction" className={style.btn} >
+            Начать тестирование
+          </Link>
+        </div>
       </div>
     </div>
   );

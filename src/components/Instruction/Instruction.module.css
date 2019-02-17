@@ -27,6 +27,7 @@
   height: 660px;
   background-color: #fcffff;
   margin: 0 auto;
+  box-shadow: 1px 2px 13px #00000040;
 }
 
 .post {

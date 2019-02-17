@@ -5,7 +5,11 @@
   background: linear-gradient(144deg, #6039aa, #000);
   width: 100%;
   height: 100vh;
-  /* padding-top: 200px; */
+}
+
+.canvasWrap {
+    width: 100%;
+    height: 100%;
 }
 
 .postWrap {
