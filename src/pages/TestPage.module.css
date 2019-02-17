@@ -96,8 +96,115 @@
 }
   
 
-  
-  .defaultButton {
-    
-   
-  }
+.buttonBlock {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonNav {
+    font-family: 'Ubuntu';
+    font-size: 10px;
+    font-weight: 700;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    color: #eca125;
+    background-color: #fff;
+    box-shadow: none;
+    border: 1px solid #eca125;
+    border-radius: 2px;
+    cursor: pointer;
+    line-height: 10px;
+}
+
+.buttonNav:hover {
+    background-color: #eca125;
+    color: #fff;
+}
+
+.buttonNavRight {
+    position: relative;
+    margin: 0 0 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+    .wrapper {
+        padding: 33px 55px 0;
+    }
+
+    .testBlock {
+        background-color: #fff;
+        padding: 50px;
+    }
+    .progressBlock {
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        width: 60%;
+        margin: 0 auto;
+
+    }
+    .progress  {
+        display: unset !important;
+    }
+    .symbolProgress {
+        display: none !important; 
+        position: absolute;
+    }
+
+    .countBlock {
+        flex-basis: 20%;
+        margin: 0 auto;
+        border-bottom: none;
+        padding: 2px;
+    }
+
+    .countItem {
+       
+    }
+
+    .questionTitle {
+        font-size: 24px;
+    }
+
+    .answerButton {
+        padding: 33px 0 ;
+        margin-bottom: 0;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+    }
+
+    .answerVariantText {
+        position: unset;
+        transform: translate(0, 0);
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .buttonBlock {
+        margin-top: 15px;
+    }
+
+    .buttonNav {
+        padding: 15px 20px;
+        font-size: 11px;
+        line-height: 11px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .testBlock {
+        max-width: 657px;
+        margin: 0 auto;
+        box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
+    }
+
+    .buttonNav {
+        line-height: 18px;
+    }
+
+}

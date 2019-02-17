@@ -111,22 +111,26 @@ class TestPage extends Component {
     return (
       <div className={style.wrapper}>
         <div className={style.testBlock}>
-          <div className={style.countBlock}>
-            <span className={style.countItem}>
-              {currentQuestion} / {totalQuestions}
-            </span>
+          <div className={style.progressBlock}>
+            <div className={style.countBlock}>
+              <span className={style.countItem}>
+                {currentQuestion} / {totalQuestions}
+              </span>
+            </div>
+            <Progress
+              percent={progressPercent}
+              status='success'
+              theme={{
+                success: {
+                  
+                  color: '#f5a623'
+                }
+              }}
+              symbolClassName={style.symbolProgress}
+              className={style.progress}
+            />
           </div>
-          <Progress
-            percent={progressPercent}
-            status='success'
-            theme={{
-              success: {
-                symbol: null,
-                color: '#f5a623'
-              }
-            }}
-            className={style.progress}
-          />
+
           {errorMessage && <p>{errorMessage}</p>}
           {question.map(
             el =>
@@ -139,14 +143,24 @@ class TestPage extends Component {
                 />
               )
           )}
-          {currentQuestion > 1 && (
-            <button type='button' onClick={() => this.handlePrevQuestion()}>
-              PrevQuestion
+          <div className={style.buttonBlock}>
+            {currentQuestion > 1 && (
+              <button
+                type='button'
+                onClick={() => this.handlePrevQuestion()}
+                className={style.buttonNav}
+              >
+                <span>Назад</span>
+              </button>
+            )}
+            <button
+              type='button'
+              onClick={() => this.handleNextQuestion()}
+              className={`${style.buttonNav} ${style.buttonNavRight}`}
+            >
+              Следующий
             </button>
-          )}
-          <button type='button' onClick={() => this.handleNextQuestion()}>
-            NextQuestion
-          </button>
+          </div>
         </div>
       </div>
     )
