@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Result from '../components/Result/Result';
-
 import {ResultContext} from '../context/ResultContext';
 import * as api from '../services/api';
-
 import style from './ResultPage.module.css';
 
 class ResultPage extends Component {

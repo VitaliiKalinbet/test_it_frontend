@@ -1,4 +1,4 @@
-@import '../../theme/palette.modules.css';
+/* @import '../../theme/palette.modules.css';
 
 .Header{
     background-color: var(--blueberry);
@@ -26,4 +26,56 @@
     font-size: 22px;
     font-weight: 800;
     color: var( --squash-two)
-}
+} */
+
+
+/* Андрея стили */
+.Header {
+    background-color: var(--blueberry);
+    padding: 20px 0;
+    min-width: 320px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .Wrapper {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  .Logo {
+    color: var(--text-logo);
+    font-size: 20px;
+    display: flex;
+    font-family: "Ubuntu";
+    font-weight: 800;
+    justify-content: center;
+  }
+  
+  .logoTag {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--squash-two);
+  }
+  
+  /* Tablet */
+  @media screen and (min-width: 768px) {
+    .Header {
+      min-width: 768px;
+    }
+  
+    .Logo {
+      font-size: 24px;
+    }
+  
+    .logoTag {
+      font-size: 24px;
+    }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .Header {
+      min-width: 1024px;
+    }
+  }
+  
