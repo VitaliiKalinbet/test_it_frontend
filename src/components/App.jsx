@@ -10,7 +10,7 @@ import Header from './Header/Header';
 
 class App extends Component {
   state = {
-    results: []
+    results: {}
   };
 
   handleUpdateResults = results => {

@@ -1,58 +1,46 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Result from '../components/Result/Result';
 
-import { ResultContext } from '../context/ResultContext';
-import * as api from '../services/api'
+import {ResultContext} from '../context/ResultContext';
+import * as api from '../services/api';
 
 import style from './ResultPage.module.css';
 
-
 class ResultPage extends Component {
 
-    static contextType = ResultContext;
+  static contextType = ResultContext;
 
-    state = {
-        results: {
-            profession: [],
-            userData: {
-                result: {}
-            }
-        }            
-    }
+  state = {};
 
+  handleGetUserResult = () => {
+    const {match: {params: {id}}} = this.props;
 
-    handleGetUserResult = () => {
-        const { match } = this.props;
-        api.getUserResults(match.params.id)
-        .then(({data})=>{
-            this.setState(prevState => {
-                return prevState.results = {...data}
-            })
-        }).catch(err=>console.log(err))
-    }
+    api.getUserResults(id).then(({data}) => {
+      if (data.results) {
+        this.setState(data.results);
+      }
+    }).catch(err => console.log(err));
+  };
 
-    componentDidMount() {
-        this.handleGetUserResult()
-    }
+  componentDidMount() {
+    this.handleGetUserResult();
+  }
 
-    render() {
+  render() {
+    const { results } = this.context;
 
-        const { profession, results: {userData: { result }} } = this.state;
-        const resultObject = {
-            results: {
-                profession,
-                result
-            }
-            
+    const resultsToRender = !!results.result ? results : this.state;
+
+    console.log(this.context);
+
+    return (
+      <div className={style.test}>
+        {
+          resultsToRender && <Result results={resultsToRender} />
         }
-        console.log(this.context)
-
-        return (
-            <div className={style.test}>
-                {(this.context.results.length !== 0 ) ? <Result { ...this.context }/> : <Result  {...resultObject} /> }
-            </div>
-        );
-    }
+      </div>
+    );
+  }
 }
 
 export default ResultPage;
