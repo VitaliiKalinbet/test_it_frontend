@@ -24,12 +24,17 @@ const options = {
 
 export default class Result extends Component {
   render() {
-    const { tester, frontend, backend, manager } = this.props.results;
+    const { result = {}, profession = [] } = this.props.results;
     const dataPie = {
       labels: ["FRONT-END", "BACK-END", "QA", "MANAGER"],
       datasets: [
         {
-          data: [frontend, backend, tester, manager],
+          data: [
+            result.frontend,
+            result.backend,
+            result.tester,
+            result.manager
+          ],
           backgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"],
           hoverBackgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"]
         }
@@ -41,7 +46,9 @@ export default class Result extends Component {
           <h1 className={style.title}>{title}</h1>
           <Pie data={dataPie} options={options} />
         </div>
-        <Task />
+        {profession.map(prof => (
+          <Task key="prof._id" {...prof} />
+        ))}
         <Links />
       </div>
     );

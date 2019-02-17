@@ -1,20 +1,20 @@
 # Проект TEST_IT
 
-================short rules for working with this repository for developers================
-1) Клонируете себе на машину репозиторий: 
+## ================short rules for working with this repository for developers================
++ ul 1) Клонируете себе на машину репозиторий: 
 1.1) git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
-2) Закрываете консоль и открываете ее в созданной после клонирования папке (или cd test_it_frontend). Создаете ветку с названием компонента который будете делать, например: 
-2.1) git checkout -b Home
-2.2) Чтобы установить все модули, на уровне с package.json запускаете консоль и команда:
++ ul 2) Закрываете консоль и открываете ее в созданной после клонирования папке (или cd test_it_frontend). Создаете ветку с названием компонента который будете делать, например: 
+  +  2.1) git checkout -b Home
+  +  2.2) Чтобы установить все модули, на уровне с package.json запускаете консоль и команда:
 npm i
-2.3) Ознакомьтесь с установленными модулями в package.json, и старайтесь ими обойтись, например для графиков это react-chartjs-2, для прогресс бара react-sweet-progress.
-3) Работаете в ветке например (Home), первая отправка файлов на репозиторий: 
-3.1) git add .
-3.2) git commit -m "some text"
-3.3) git push --set-upstream origin Home       (при повторных отправках на этом шаге просто - git push) 
+  +  2.3) Ознакомьтесь с установленными модулями в package.json, и старайтесь ими обойтись, например для графиков это react-chartjs-2, для прогресс бара react-sweet-progress.
++ ul 3) Работаете в ветке например (Home), первая отправка файлов на репозиторий: 
+  +  3.1) git add .
+  +  3.2) git commit -m "some text"
+  +  3.3) git push --set-upstream origin Home       (при повторных отправках на этом шаге просто - git push) 
 
 
-=================INFORMATION FOR DEVELOPERS===================
+## =================INFORMATION FOR DEVELOPERS===================
 В компонент App.jsx подключены 4 страницы согласно макета home.psd это HomePage.jsx, page-1.psd это InstructionPage.jsx, page-2(3).psd это TestPage.jsx, result.psd это ResultPage.jsx. Подключен роутинг, в зависимости от окончания url, страницы переключаются, переходы между страницами реализуйте у себя с помощью <NavLink to='/…'>.
 Макеты тут: 
 https://drive.google.com/drive/folders/1KQrr1w8U9VyH-qVJqQ5icF_ywVw81Nnb
