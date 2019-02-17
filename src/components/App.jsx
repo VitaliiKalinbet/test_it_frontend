@@ -28,8 +28,10 @@ class App extends Component {
         <Header/>
           <Switch>
             <Route exact path="/" component={HomePage} />
+            
             <Route path="/instruction" component={InstructionPage} />
             <Route path="/test" component={TestPage} />
+            <Route path="/result/:id" component={ResultPage} />
             <Route path="/result" component={ResultPage} />
           </Switch>
         </ResultContext.Provider>
