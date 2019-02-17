@@ -1,5 +1,5 @@
 import React from "react";
-import style from "./Test.module.css";
+import style from "../../pages/TestPage.module.css";
 
 const QuestionButton = ({
   answerTitle = "",
@@ -10,11 +10,11 @@ const QuestionButton = ({
 }) => {
   return (
     <div
-      className={answerId === _id ? style.activeButton : style.defaultButton}
+      className={answerId === _id ? `${style.activeButton} ${style.answerButton}` : `${style.defaultButton, style.answerButton}`}
       name={typeProfession}
       onClick={() => setAnswer(typeProfession, _id)}
     >
-      <span>{typeProfession}</span>
+      <span className={answerId === _id ? `${style.answerVariantText} ${style.activeAnswerVariantText}` : `${style.answerVariantText}`}>{typeProfession}</span>
       <span>{answerTitle}</span>
       <span>{}</span>
     </div>

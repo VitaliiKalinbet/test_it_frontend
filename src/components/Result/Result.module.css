@@ -1,125 +1,32 @@
-@import '../../theme/palette.modules.css';
-
 .wrapper{
-    width:800px;
+    width: 280px;
     margin: 30px auto;
 }
-.wrapperShadow{
-    background-color: #fff;
-    padding: 40px;
-    margin: 0 auto;
-    box-shadow: 1px 2px 13px #00000040;
-}
-.title{
-    color: var(--text-logo);
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 60px 0;
-    background: linear-gradient(120deg, #6039aa, #180733);
-}
-.titleParagraph{
-    text-align: center;
-    font-size: 24px;
-    margin: 40px;
-}
-.paragraph{
-    line-height: 30px;
 
-}
-input[type=checkbox] + label {
-    display: block;
-    margin: 0.2em;
-    cursor: pointer;
-    padding: 0.2em;
-  }
-  
-input[type=checkbox] {
-    display: none;
+@media (min-width: 768px) {
+    .wrapper{
+        width: 660px;
+        margin: 30px auto;
+    }
 }
 
-input[type=checkbox] + label:before {
-    content: "\2714";
-    border: 0.1em solid #000;
-    border-radius: 0.2em;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    padding-left: 0.2em;
-    padding-bottom: 0.3em;
-    margin-right: 0.8em;
-    vertical-align: bottom;
-    color: transparent;
-    transition: .2s;
-}
-
-input[type=checkbox] + label:active:before {
-    transform: scale(0);
-}
-
-input[type=checkbox]:checked + label:before {
-    background-color: var(--orangey-yellow);
-    border-color: var(--orangey-yellow);
-    color: #fff;
-}
-
-input[type=checkbox]:disabled + label:before {
-    transform: scale(1);
-    border-color: #aaa;
-}
-
-input[type=checkbox]:checked:disabled + label:before {
-    transform: scale(1);
-    background-color: #bfb;
-    border-color: #bfb;
-}
-.tasks{
-    margin: 10px 0 50px 0 ;
-}
-
-.btn{
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    padding: 15px 25px;
-    font-weight: 800;
-    margin: 0 auto;
-    display: inline-block;
-    background-color: var(--macaroni-and-cheese);
-    text-decoration: none;
-}
-.btn:hover{
-    background-color: var(--squash);
-}
-.shareFB{
-    position: relative;
-}
-.inputEmail{
-    outline: none;
-    width: 350px;
-    padding: 15px 20px;
-    margin: 0 auto;
-    font-size: 16px;
-    border-radius: 30px;
-    border: 1px solid #00000040;
-    display: block;
-}
-
-.inputEmail:focus{
-    box-shadow: 1px 1px 9px #00000020;
-}
-.inputSubmit{
-    position: absolute;
-    right: 165px;
-    top: 0px;
-    padding: 10px 25px;
-    background: var(--macaroni-and-cheese);
-    font-size: 24px;
-    color: #fff;
-    border-radius: 40px;
-    outline: none;
-    cursor: pointer;
-}
-.inputSubmit:hover{
-    background-color: var(--squash);
+@media (min-width: 1024px) {
+    .wrapper{
+        width: 800px;
+        margin: 30px auto;
+    }
+    
+    .wrapperShadow{
+        background-color: #fff;
+        padding: 40px;
+        margin: 0 auto;
+        box-shadow: 1px 2px 13px #00000040;
+    }
+    .title{
+        color: var(--text-logo);
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 60px 0;
+        background: linear-gradient(120deg, #6039aa, #180733);
+    }
 }
