@@ -4,7 +4,6 @@ import { Pie } from "react-chartjs-2";
 // Components
 import Task from "./Task";
 import Links from "./Links";
-
 // Instruments
 import style from "./Result.module.css";
 
@@ -24,37 +23,18 @@ const options = {
 };
 
 export default class Result extends Component {
-  state = {
-    dataPie: {
-      labels: ["FRONT-END", "BACK-END", "QA", "MANEGER"],
+  render() {
+    const { tester, frontend, backend, manager } = this.props.results;
+    const dataPie = {
+      labels: ["FRONT-END", "BACK-END", "QA", "MANAGER"],
       datasets: [
         {
-          data: [15, 30, 25, 10],
+          data: [frontend, backend, tester, manager],
           backgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"],
           hoverBackgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"]
         }
       ]
-    }
-  };
-
-  handleSetResults = () => {
-    console.log(this.props);
-    const { frontend, backend, tester, manager } = this.props.results;
-
-    const newArr = [frontend, backend, tester, manager];
-    console.log(newArr);
-
-    this.setState(prevState => {
-      return (prevState.dataPie.datasets[0].data = [...newArr]);
-    });
-  };
-
-  componentDidUMount() {
-    this.handleSetResults();
-  }
-
-  render() {
-    const { dataPie } = this.state;
+    };
     return (
       <div className={style.wrapper}>
         <div className={style.wrapperShadow}>
