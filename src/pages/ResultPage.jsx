@@ -5,40 +5,42 @@ import * as api from '../services/api';
 import style from './ResultPage.module.css';
 
 class ResultPage extends Component {
+  static contextType = ResultContext
 
-  static contextType = ResultContext;
-
-  state = {};
+  state = {}
 
   handleGetUserResult = () => {
-    const {match: {params: {id}}} = this.props;
-
-    api.getUserResults(id).then(({data}) => {
-      if (data.results) {
-        this.setState(data.results);
+    const {
+      match: {
+        params: { id }
       }
-    }).catch(err => console.log(err));
-  };
+    } = this.props
 
-  componentDidMount() {
-    this.handleGetUserResult();
+    api
+      .getUserResults(id)
+      .then(({ data }) => {
+        if (data.results) {
+          this.setState(data.results)
+        }
+      })
+      .catch(err => console.log(err))
   }
 
-  render() {
-    const { results } = this.context;
+  componentDidMount () {
+    this.handleGetUserResult()
+  }
 
-    const resultsToRender = !!results.result ? results : this.state;
+  render () {
+    const { results } = this.context
 
-    console.log(this.context);
+    const resultsToRender = results.result ? results : this.state
 
     return (
       <div className={style.test}>
-        {
-          resultsToRender && <Result results={resultsToRender} />
-        }
+        {resultsToRender && <Result results={resultsToRender} />}
       </div>
-    );
+    )
   }
 }
 
-export default ResultPage;
+export default ResultPage

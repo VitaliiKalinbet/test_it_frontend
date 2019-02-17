@@ -14,9 +14,11 @@ const QuestionButton = ({
       name={typeProfession}
       onClick={() => setAnswer(typeProfession, _id)}
     >
-      <span className={answerId === _id ? `${style.answerVariantText} ${style.activeAnswerVariantText}` : `${style.answerVariantText}`}>{typeProfession}</span>
+    <div>
+    <span className={answerId === _id ? `${style.answerVariantText} ${style.activeAnswerVariantText}` : `${style.answerVariantText}`}>{typeProfession}</span>
+    </div>
+      
       <span>{answerTitle}</span>
-      <span>{}</span>
     </div>
   );
 };
