@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* @font-face {
+  font-family: 'OpenSans-Bold';
+  src: url('./assets/fonts/Open_Sans/OpenSans-Bold.ttf') format("ttf"),
+} */
