@@ -28,7 +28,7 @@ const Instructions = () => {
     <div className={style.pageWrap}>
       <div className={style.instructWrap}>
         <div className={style.instructImage}>
-          <Particles params={part} />
+          <Particles params={part} className={style.image}/>
         </div>
         <div className={style.post}>
           <h1 className={style.title}> {instruction.title}</h1>
@@ -37,7 +37,7 @@ const Instructions = () => {
         <div className={style.wrapper_btn}>
           <NavLink className={style.btn} to="/test">
             перейти к вопросам
-          </NavLink>
+          </NavLink> 
         </div>
       </div>
     </div>

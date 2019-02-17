@@ -1,44 +1,56 @@
 @import "../../theme/palette.modules.css";
 
-.Home {
+.pageWrap {
   position: relative;
   background: linear-gradient(144deg, #6039aa, #000);
   width: 100%;
-  height: 100vh;
+  min-width: 320px;
+  margin: 0 auto;
 }
 
 .canvasWrap {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 529px;
 }
 
 .postWrap {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 160px;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-50%) translateY(-50%);
   width: 100%;
-  padding-top: 220px;
+  padding-left: 30px;
+  padding-right: 30px;
+  /* padding-top: 45px; */
 }
 
 .title {
   color: #fff;
   text-align: center;
-  margin-bottom: 35px;
-}
-h1 {
-  margin: 0;
+  font-size: 22px;
+  font-family: "Ubuntu";
+  margin-bottom: 30px;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .post {
+  width: 260px;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 35px;
-  width: 760px;
-   color: #fff;
+  color: #fff;
+  font-size: 13px;
+  font-family: "Ubuntu";
+  line-height: 1.556;
 }
 
 .btnWrap {
-  width: 100%;
+  /* width: 100%; */
+  width: 240px;
+  height: 50px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -49,14 +61,78 @@ h1 {
   border: none;
   border-radius: 5px;
   color: #fff;
-  font-size: 16px;
+  font-size: 13px;
+  font-family: "Ubuntu";
   padding: 15px 25px;
   font-weight: 800;
-  display: inline-block;
   background-color: var(--macaroni-and-cheese);
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn:hover {
   background-color: var(--squash);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .pageWrap {
+    min-width: 768px;
+  }
+
+  .canvasWrap {
+    min-height: 1020px;
+  }
+
+  .postWrap {
+    top: 260px;
+    padding-left: 105px;
+    padding-right: 105px;
+    padding-top: 226px;
+  }
+  .title {
+    font-size: 40px;
+    margin-bottom: 45px;
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .post {
+    width: 430px;
+    margin-bottom: 35px;
+    font-size: 20px;
+  }
+
+  .btnWrap {
+    width: 280px;
+    height: 60px;
+  }
+  .btn {
+    font-size: 18px;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .postWrap {
+    padding-top: 220px;
+  }
+
+  .post {
+    width: 770px;
+    font-size: 18px;
+  }
+
+  .title {
+    margin-bottom: 35px;
+  }
+
+  .post {
+    margin-bottom: 35px;
+    width: 760px;
+  }
+
+  .btn {
+    font-size: 18px;
+  }
 }
