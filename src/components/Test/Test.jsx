@@ -1,7 +1,5 @@
 import React from 'react'
-
 import AnswerButton from './AnswerButton'
-
 import style from '../../pages/TestPage.module.css'
 
 const Test = ({ answerId, questionTitle = '', answers = [], setAnswer }) => {

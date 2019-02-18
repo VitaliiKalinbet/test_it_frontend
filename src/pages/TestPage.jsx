@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
-import { Progress } from 'react-sweet-progress'
-import { ResultContext } from '../context/ResultContext'
+import React, { Component } from 'react';
+import { Progress } from 'react-sweet-progress';
+import { ResultContext } from '../context/ResultContext';
 
-import Test from '../components/Test/Test'
+import Test from '../components/Test/Test';
+import * as api from '../services/api';
 
-import * as api from '../services/api'
-
-import 'react-sweet-progress/lib/style.css'
-import style from './TestPage.module.css'
+import 'react-sweet-progress/lib/style.css';
+import style from './TestPage.module.css';
 
 class TestPage extends Component {
   static contextType = ResultContext

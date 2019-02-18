@@ -3,17 +3,18 @@ import iconFacebook from '../../assets/img/facebook.png';
 import style from './FormToEmail.module.css';
 const title = ['Отправит результат на почту'];
 
-const FormToEmail = () => {
+const FormToEmail = ( {email, handelChange, sendResultOnEmail, messageFromSendEmail} ) => {
     return (
         <div className={style.wrapper}>
             <div className={style.wrapperShadow}>
 
-                <h1 className={style.titleParagraph}>{title}</h1>
+            <h1 className={style.titleParagraph}>{title}</h1>
 
-               <div className={style.shareFB}>
-                    <input className={style.inputEmail} type='email' placeholder='Email' />
+                <form className={style.shareFB} onSubmit={(e) => sendResultOnEmail(e)}>
+                    <input onChange={handelChange} name="email" value={email}  className={style.inputEmail} type='email' placeholder='Email' />
                     <button className={style.inputSubmit} type='submit'>&#10148;</button>
-                </div>
+                </form>
+                {messageFromSendEmail ? <p>{messageFromSendEmail}</p> : null}
 
                 <div className={style.wrapper_facebook}>
                     <a href='https://www.facebook.com/GoITeens/' target="_blank" rel="noopener noreferrer">

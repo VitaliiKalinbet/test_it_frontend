@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import Result from '../components/Result/Result';
-import {ResultContext} from '../context/ResultContext';
+import { ResultContext } from '../context/ResultContext';
 import * as api from '../services/api';
 import style from './ResultPage.module.css';
 
 class ResultPage extends Component {
-  static contextType = ResultContext
+  static contextType = ResultContext;
 
-  state = {}
+  state = {
+
+  }
 
   handleGetUserResult = () => {
     const {
@@ -31,13 +33,13 @@ class ResultPage extends Component {
   }
 
   render () {
-    const { results } = this.context
+    const { results } = this.context;
 
-    const resultsToRender = results.result ? results : this.state
+    const resultsToRender = results.result ? results : this.state;
 
     return (
       <div className={style.test}>
-        {resultsToRender && <Result results={resultsToRender} />}
+        {resultsToRender && <Result userAnswersId={this.props.match.params.id} results={resultsToRender} />}
       </div>
     )
   }
