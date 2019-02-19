@@ -36,7 +36,7 @@
 
 .inputSubmit {
     position: absolute;
-    right: 165px;
+    right: calc(20% + 22px);   
     top: 0px;
     padding: 10px 25px;
     background: var(--macaroni-and-cheese);
@@ -56,3 +56,45 @@
     justify-content: center;
     margin-top: 2rem;
 }
+/* Mob */
+@media screen and (max-width: 768px) {
+    .wrapper {
+        width: 85%;
+    }
+    .inputSubmit {
+        right: -8px;
+    }
+    .inputEmail {
+        width: 90%;
+    }
+  }
+
+  /* Mob */
+@media screen and (max-width: 468px) {
+    .wrapper{
+        width: 88%;
+        margin: 30px auto 0 auto;
+    }
+    .wrapperShadow{
+      padding: 6px 0;
+    }
+    .inputSubmit {
+        width: 23%;
+        right: calc(5% + -7px);
+        font-size: 19px;
+        padding: 13px 20px;
+     }
+     .titleParagraph {
+        font-size: 18px;
+        margin-bottom: 10px 10px;
+    }
+    .inputEmail {
+        width: 76%;
+    } 
+    .wrapper_facebook {
+        margin: 20px 0;
+    }
+    
+  }
+
+
