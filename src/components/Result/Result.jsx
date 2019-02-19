@@ -7,8 +7,6 @@ import FormToEmail from '../FormToEmail/FormToEmail';
 import * as api from '../../services/api.js'
 import style from './Result.module.css';
 
-// const title = ["Результаты тестирования"];
-
 const options = {
   // maintainAspectRatio: false,
   responsive: true,
@@ -79,9 +77,7 @@ export default class Result extends Component {
         <div className={style.wrapperShadow}>
             <div  className={style.title}> 
               <h1>Результаты <span className={style.hideOnModal}>тестирования</span></h1> 
-              
             </div>
-         
           <Pie data={dataPie} options={options} />
         </div>
         {profession.map(prof => <ProfessionDescr key="prof._id" {...prof} />)}

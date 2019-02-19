@@ -1,7 +1,14 @@
-
+.wrapper{
+    padding: 0 20px;
+    margin: 20px 0;
+}
 .paragraph {
     line-height: 25px;
     font-size: 14px;
+}
+.titleParagraph {
+    text-align: center;
+    font-size: 24px;
 }
 
 input[type=checkbox]+label {
@@ -54,9 +61,6 @@ input[type=checkbox]:checked:disabled+label:before {
 .tasks {
     margin: 10px 0 50px 0;
 }
-@media (min-width: 768px) {
-
-}
 
 @media (min-width: 1024px) {
     .wrapper {
@@ -65,18 +69,20 @@ input[type=checkbox]:checked:disabled+label:before {
         flex-direction: column;
         justify-content: center;
     }
-
-    .titleParagraph {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .paragraph {
         margin: 0;
     }
-
     .btn {
         margin-top: 2rem;
     }
+}
+
+@media (max-width: 768px) {
+    .wrapper{
+        margin: 40px 0 0 0 ;
+    }
+    .titleParagraph {
+        font-size: 20px;
+    }
+
 }

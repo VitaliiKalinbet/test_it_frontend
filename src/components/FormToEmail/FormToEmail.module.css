@@ -36,7 +36,7 @@
 
 .inputSubmit {
     position: absolute;
-    right: calc(20% + 22px);   
+    right: 165px;
     top: 0px;
     padding: 10px 25px;
     background: var(--macaroni-and-cheese);
@@ -80,9 +80,9 @@
     }
     .inputSubmit {
         width: 23%;
-        right: calc(5% + -7px);
-        font-size: 19px;
-        padding: 13px 20px;
+        right: calc(5% + 0px);
+        font-size: 18px;
+        padding: 14px 1px;
      }
      .titleParagraph {
         font-size: 18px;
