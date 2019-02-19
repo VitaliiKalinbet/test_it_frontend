@@ -3,9 +3,31 @@ import { Pie } from 'react-chartjs-2';
 import ProfessionDescr from '../ProfessionDescr/ProfessionDescr';
 import ButtonTryAgain from'./Button/ButtonTryAgain';
 import FormToEmail from '../FormToEmail/FormToEmail';
+
+import Particles from "react-particles-js";
 // import { ResultContext } from '../context/ResultContext';
 import * as api from '../../services/api.js'
 import style from './Result.module.css';
+
+
+const part = {
+  particles: {
+    number: {
+      value: 30
+    },
+    size: {
+      value: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      }
+    }
+  }
+};
 
 const options = {
   // maintainAspectRatio: false,
@@ -74,12 +96,23 @@ export default class Result extends Component {
     };
     return (
       <div className={style.wrapper}>
+
         <div className={style.wrapperShadow}>
-            <div  className={style.title}> 
-              <h1>Результаты <span className={style.hideOnModal}>тестирования</span></h1> 
-            </div>
-          <Pie data={dataPie} options={options} />
+
+              <div className={style.wrapHead}>
+                  <div className={style.canvasWrap}>
+                    <Particles params={part} />
+                  </div>
+                  <div  className={style.title}> 
+                    <h1>Результаты <span className={style.hideOnModal}>тестирования</span></h1> 
+                  </div>
+              </div>
+
+          <div className={style.pieStyle}>
+              <Pie data={dataPie} options={options} />
+          </div>
         </div>
+
         {profession.map(prof => <ProfessionDescr key="prof._id" {...prof} />)}
         <ButtonTryAgain />
         <FormToEmail messageFromSendEmail={this.state.messageFromSendEmail} sendResultOnEmail={this.sendResultOnEmail} email={this.state.email} handelChange={this.handelChange} />

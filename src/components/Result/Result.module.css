@@ -16,9 +16,8 @@
     background-color: var(--macaroni-and-cheese);
     text-decoration: none;
 }
-
-.btn:hover {
-    background-color: var(--squash);
+.pieStyle{
+    margin: 20px 0 ;
 }
 .hideOnModal{
     display: none;
@@ -30,14 +29,37 @@
     margin: 0 auto;
     box-shadow: 1px 2px 13px #00000040;
 }
+.wrapHead{
+    width: 100%;
+    position: relative;
+    background: linear-gradient(144deg, #6039aa, #000);
+
+}
+.canvasWrap{
+    width: 80%;
+    min-height: 129px;
+}
 
 .title{
+    position: absolute;
+    top: 20px;
+    left: 15%;
     font-size: 20px;
     color: var(--text-logo);
-    text-align: center;
-    margin-bottom: 30px;
-    padding: 60px 0;
-    background: linear-gradient(120deg, #6039aa, #180733);
+    margin: 0 auto;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .title{
+        top: 72px;
+        left: 28%;
+    }
+
+
 }
 
 @media (min-width: 768px) {
@@ -50,12 +72,12 @@
         text-align: center;
         margin-bottom: 30px;
         padding: 60px 0;
-        background: linear-gradient(120deg, #6039aa, #180733);
     }
     .hideOnModal{
         text-align: center;
          display: inline-block;;
     }
+
 }
 
 @media (min-width: 1024px) {
@@ -76,20 +98,20 @@
         text-align: center;
         margin-bottom: 30px;
         padding: 60px 0;
-        background: linear-gradient(120deg, #6039aa, #180733);
     }
 }
 
 /* Mob */
 @media screen and (max-width: 468px) {
-    .title{
-        font-size: 16px;
-        color: var(--text-logo);
-        text-align: center;
-        margin-bottom: 10px;
-        padding: 30px 0;
-        background: linear-gradient(120deg, #6039aa, #180733);
-    }
+        .title{
+            position: absolute;
+            top: 60px;
+            left: 22%;
+            right: 78%;
+            font-size: 20px;
+            color: var(--text-logo);
+            margin: 0 auto;
+   } 
     .wrapperShadow{
         padding: 15px;
     }
