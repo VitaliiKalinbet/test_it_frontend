@@ -8,6 +8,7 @@
   top: 0;
   background-color: black;
 }
+
 .wrapper {
   margin: 0;
   padding: 0;
@@ -16,8 +17,8 @@
 }
 
 .testBlock {
-  padding: 15px 20px 0;
-  margin: 0;
+  padding: 1rem;
+  margin: 1rem;
   text-align: center;
 }
 
@@ -40,12 +41,13 @@
 .progress {
   display: none !important;
 }
+
 .errorMessage {
   color: red;
   font-weight: 700;
 }
-.questionBlock {
-}
+
+.questionBlock {}
 
 .questionTitle {
   display: inline-block;
@@ -56,8 +58,8 @@
   padding: 15px 0 30px;
 }
 
-.answerBlock {
-}
+/* .answerBlock {
+} */
 
 .answerButton {
   position: relative;
@@ -137,14 +139,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .wrapper {
-    padding: 33px 55px 0;
-  }
 
   .testBlock {
     background-color: #fff;
     padding: 50px;
   }
+
   .progressBlock {
     display: flex;
     justify-content: center;
@@ -152,9 +152,11 @@
     width: 60%;
     margin: 0 auto;
   }
+
   .progress {
     display: unset !important;
   }
+
   .symbolProgress {
     display: none !important;
     position: absolute;
@@ -167,8 +169,8 @@
     padding: 2px;
   }
 
-  .countItem {
-  }
+  /* .countItem {
+  } */
 
   .questionTitle {
     position: relative;
@@ -209,7 +211,8 @@
 
 @media screen and (min-width: 1024px) {
   .testBlock {
-    max-width: 550px;
+    max-width: 750px;
+    margin-top: 1rem;
     margin: 0 auto;
     padding: 30px 7%;
     box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
@@ -226,6 +229,7 @@
     background-color: #f3a82d;
     transform: translateX(-50%);
   }
+
   .answerButton:hover .answerVariantText {
     background-color: #fff;
     color: #f3a82d;

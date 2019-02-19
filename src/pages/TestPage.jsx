@@ -14,6 +14,7 @@ import "react-sweet-progress/lib/style.css";
 import style from "./TestPage.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Header from '../components/Header/Header';
 
 class TestPage extends Component {
   static contextType = ResultContext;
@@ -127,66 +128,67 @@ class TestPage extends Component {
 
     return (
       <div className={style.wrapper}>
+        <Header />
         {!isLoading ? (
           <Loader />
         ) : (
-          <div className={style.testBlock}>
-            <div className={style.progressBlock}>
-              <div className={style.countBlock}>
-                <span className={style.countItem}>
-                  {currentQuestion} / {totalQuestions}
-                </span>
+            <div className={style.testBlock}>
+              <div className={style.progressBlock}>
+                <div className={style.countBlock}>
+                  <span className={style.countItem}>
+                    {currentQuestion} / {totalQuestions}
+                  </span>
+                </div>
+                <Progress
+                  percent={progressPercent}
+                  status="success"
+                  theme={{
+                    success: {
+                      color: "#f5a623"
+                    }
+                  }}
+                  symbolClassName={style.symbolProgress}
+                  className={style.progress}
+                />
               </div>
-              <Progress
-                percent={progressPercent}
-                status="success"
-                theme={{
-                  success: {
-                    color: "#f5a623"
-                  }
-                }}
-                symbolClassName={style.symbolProgress}
-                className={style.progress}
-              />
-            </div>
 
-            {errorMessage && (
-              <p className={style.errorMessage}>{errorMessage}</p>
-            )}
-            {question.map(
-              el =>
-                el.questionNumber === currentQuestion && (
-                  <Test
-                    {...el}
-                    selectedAnswer={el.answerId}
-                    key={el._id}
-                    setAnswer={this.handleSetAnswer}
-                  />
-                )
-            )}
-            <div className={style.buttonBlock}>
-              {currentQuestion > 1 && (
+              {errorMessage && (
+                <p className={style.errorMessage}>{errorMessage}</p>
+              )}
+              {question.map(
+                el =>
+                  el.questionNumber === currentQuestion && (
+                    <Test
+                      {...el}
+                      selectedAnswer={el.answerId}
+                      key={el._id}
+                      setAnswer={this.handleSetAnswer}
+                    />
+                  )
+              )}
+              <div className={style.buttonBlock}>
+                {currentQuestion > 1 && (
+                  <button
+                    type="button"
+                    onClick={() => this.handlePrevQuestion()}
+                    className={style.buttonNav}
+                  >
+                    <span>
+                      <FontAwesomeIcon icon={faArrowLeft} /> {test.prev}
+                    </span>
+                  </button>
+                )}
                 <button
                   type="button"
-                  onClick={() => this.handlePrevQuestion()}
-                  className={style.buttonNav}
+                  onClick={() => this.handleNextQuestion()}
+                  className={`${style.buttonNav} ${style.buttonNavRight}`}
                 >
-                  <span>
-                    <FontAwesomeIcon icon={faArrowLeft} /> {test.prev}
-                  </span>
+                  {currentQuestion !== totalQuestions ? test.next : test.results}
+                  <FontAwesomeIcon icon={faArrowRight} />
                 </button>
-              )}
-              <button
-                type="button"
-                onClick={() => this.handleNextQuestion()}
-                className={`${style.buttonNav} ${style.buttonNavRight}`}
-              >
-                {currentQuestion !== totalQuestions ? test.next : test.results}
-                <FontAwesomeIcon icon={faArrowRight} />
-              </button>
+              </div>
             </div>
-          </div>
-        )}
+          )}
       </div>
     );
   }

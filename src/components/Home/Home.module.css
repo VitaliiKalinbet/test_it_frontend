@@ -1,138 +1,118 @@
 @import "../../theme/palette.modules.css";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .pageWrap {
   position: relative;
   background: linear-gradient(144deg, #6039aa, #000);
   width: 100%;
   min-width: 320px;
+  height: calc(100vh - 4rem);
   margin: 0 auto;
 }
 
 .canvasWrap {
   width: 100%;
-  height: 100%;
-  min-height: 529px;
+  height: calc(100vh - 4rem);
 }
 
 .postWrap {
+  width: 80%;
   position: absolute;
-  top: 160px;
   left: 50%;
-  right: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 100%;
-  padding-left: 30px;
-  padding-right: 30px;
-  /* padding-top: 45px; */
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .title {
   color: #fff;
   text-align: center;
-  font-size: 22px;
+  font-size: 1.4rem;
   font-family: "Ubuntu";
-  margin-bottom: 30px;
-  padding-left: 35px;
-  padding-right: 35px;
+  margin-bottom: 2rem;
+  font-weight: 500;
 }
 
 .post {
-  width: 260px;
   text-align: center;
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-bottom: 2rem;
   color: #fff;
-  font-size: 13px;
+  font-size: 0.9rem;
   font-family: "Ubuntu";
   line-height: 1.556;
 }
 
-.btnWrap {
-  /* width: 100%; */
-  width: 240px;
-  height: 50px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn {
-  border: none;
-  border-radius: 5px;
-  color: #fff;
-  font-size: 13px;
-  font-family: "Ubuntu";
-  padding: 15px 25px;
-  font-weight: 800;
-  background-color: var(--macaroni-and-cheese);
+.button_wrapper {
   text-decoration: none;
-  text-transform: uppercase;
 }
 
-.btn:hover {
+.button {
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: var(--macaroni-and-cheese);
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-family: "Ubuntu";
+  text-align: center;
+  font-weight: 500;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.button:hover {
   background-color: var(--squash);
 }
 
-/* Tablet */
 @media screen and (min-width: 768px) {
   .pageWrap {
-    min-width: 768px;
-  }
-
-  .canvasWrap {
-    min-height: 1020px;
+    height: 105vh;
   }
 
   .postWrap {
-    top: 260px;
-    padding-left: 105px;
-    padding-right: 105px;
-    padding-top: 226px;
+    top: 40%;
   }
+
   .title {
-    font-size: 40px;
-    margin-bottom: 45px;
-    padding-left: 35px;
-    padding-right: 35px;
+    font-size: 1.5rem;
   }
-
+ 
   .post {
-    width: 430px;
-    margin-bottom: 35px;
-    font-size: 20px;
+    font-size: 1rem;
   }
 
-  .btnWrap {
-    width: 280px;
-    height: 60px;
-  }
-  .btn {
-    font-size: 18px;
+  .button {
+    font-size: 1rem;
   }
 }
 
-/* Desktop */
 @media screen and (min-width: 1024px) {
-  .postWrap {
-    padding-top: 220px;
+  .pageWrap {
+    height: 105vh;
   }
 
-  .post {
-    width: 770px;
-    font-size: 18px;
+  .postWrap {
+    width: 50%;
+    top: 45%;
   }
 
   .title {
-    margin-bottom: 35px;
+    font-size: 2rem;
   }
-
+ 
   .post {
-    margin-bottom: 35px;
-    width: 760px;
+    font-size: 1rem;
   }
 
-  .btn {
-    font-size: 18px;
+  .button {
+    font-size: 1rem;
   }
 }

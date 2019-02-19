@@ -6,9 +6,9 @@ import TestPage from "../pages/TestPage";
 import ResultPage from "../pages/ResultPage";
 import style from "./App.module.css";
 import { ResultContext } from "../context/ResultContext";
-import Header from './Header/Header';
 
 class App extends Component {
+
   state = {
     results: {}
   };
@@ -18,6 +18,7 @@ class App extends Component {
       results
     });
   };
+
   render() {
     const { results } = this.state;
     return (
@@ -25,10 +26,8 @@ class App extends Component {
         <ResultContext.Provider
           value={{ results, updateResults: this.handleUpdateResults }}
         >
-        <Header/>
           <Switch>
             <Route exact path="/" component={HomePage} />
-            
             <Route path="/instruction" component={InstructionPage} />
             <Route path="/test" component={TestPage} />
             <Route path="/result/:id" component={ResultPage} />

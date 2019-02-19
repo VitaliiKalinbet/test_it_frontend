@@ -66,7 +66,6 @@ export default class Result extends Component {
     event.preventDefault();
     event.stopPropagation();
     console.log(event);
-    // this.canvasTagToImage();
     const canvas = document.querySelector('canvas');
     const canvasImage = canvas.toDataURL();
     console.log(canvasImage);
