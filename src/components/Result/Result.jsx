@@ -6,20 +6,20 @@ import FormToEmail from '../FormToEmail/FormToEmail';
 import * as api from '../../services/api.js'
 import style from './Result.module.css';
 
-const title = ['Результаты тестирования'];
+const title = ["Результаты тестирования"];
 
 const options = {
   // maintainAspectRatio: false,
   // responsive: true,
   legend: {
-    position: 'bottom',
+    position: "bottom",
     labels: {
       boxWidth: 20,
       padding: 30,
       fontSize: 16
     }
   }
-}
+};
 
 // for testing
 const res =
@@ -56,14 +56,6 @@ export default class Result extends Component {
     messageFromSendEmail: '',
   };
 
-  // canvasTagToImage = () => {
-  //   const canvas = document.querySelector('canvas');
-  //   const canvasImage = canvas.toDataURL();
-  //   this.setState({
-  //     canvasImage: canvasImage,
-  //   })
-  // };
-
   handelChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -91,17 +83,22 @@ export default class Result extends Component {
   };
 
   render() {
-
     const { result = {}, profession = [] } = this.props.results;
     // const { result = {}, profession = []} = res;
     const dataPie = {
-      labels: ['FRONT-END', 'BACK-END', 'QA', 'MANAGER'],
-      datasets: [{
-        data: [result.frontend, result.backend, result.tester, result.manager],
-        backgroundColor: ['#75ffff', '#a44deb', '#f5a623', '#f3a82d51'],
-        hoverBackgroundColor: ['#75ffff', '#a44deb', '#f5a623', '#f3a82d51']
-      },
-      ],
+      labels: ["FRONT-END", "BACK-END", "QA", "MANAGER"],
+      datasets: [
+        {
+          data: [
+            result.frontend,
+            result.backend,
+            result.tester,
+            result.manager
+          ],
+          backgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"],
+          hoverBackgroundColor: ["#75ffff", "#a44deb", "#f5a623", "#f3a82d51"]
+        }
+      ]
     };
     return (
       <div className={style.wrapper}>
@@ -115,3 +112,4 @@ export default class Result extends Component {
     );
   }
 };
+

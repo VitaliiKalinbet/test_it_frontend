@@ -1,210 +1,245 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Ubuntu:300,300i,400,400i,500,500i,700,700i');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i|Ubuntu:300,300i,400,400i,500,500i,700,700i");
 
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: black;
+}
 .wrapper {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    background-color: #f9f7fd;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: #f9f7fd;
 }
 
 .testBlock {
-    padding: 15px 20px 0;
-    margin: 0;
-    text-align: center;
+  padding: 15px 20px 0;
+  margin: 0;
+  text-align: center;
 }
 
 .countBlock {
-    width: 50px;
-    margin: 0 auto;
-    border-bottom: 2px solid #f3a82d;
-    padding: 2px;
+  width: 50px;
+  margin: 0 auto;
+  border-bottom: 2px solid #f3a82d;
+  padding: 2px;
 }
 
 .countItem {
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    letter-spacing: 0.52px;
-    font-weight: 700;
-    font-size: 13px;
-    color: #999999;
+  text-align: center;
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 0.52px;
+  font-weight: 700;
+  font-size: 13px;
+  color: #999999;
 }
 
-.progress  {
-    display: none !important;
+.progress {
+  display: none !important;
 }
-
+.errorMessage {
+  color: red;
+  font-weight: 700;
+}
 .questionBlock {
-    
 }
 
 .questionTitle {
-    display: inline-block;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: 700;
-    font-size: 15px;
-    color: #333333;
-    padding: 15px 0 30px;
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #333333;
+  padding: 15px 0 30px;
 }
 
 .answerBlock {
-
 }
 
 .answerButton {
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0 2px 10px rgba(44, 46, 51, 0.2);
-    margin-bottom: 16px;
-    padding: 20px 15px;
-    font-size: 12px;
-    cursor: pointer;
-    border-radius: 3px;
-    transition: 0.1s all;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(44, 46, 51, 0.2);
+  margin-bottom: 16px;
+  padding: 20px 15px;
+  font-size: 12px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.1s all;
 }
 
 .answerButton:hover {
-    background-color:#f5a523;
-    color: #fff;
-    transition: 0.1s all;
+  background-color: #f5a523;
+  color: #fff;
+  transition: 0.1s all;
 }
 
 .answerVariantText {
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f5a623;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    line-height: 22px;
-    font-family: 'Ubuntu';
-    color: #fff;
-    font-weight: 700;
-    box-shadow: 1px 2px 3px rgba(32, 32, 32, 0.2);
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f5a623;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  line-height: 22px;
+  font-family: "Ubuntu";
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 1px 2px 3px rgba(32, 32, 32, 0.2);
 }
 
 .activeAnswerVariantText {
-    background-color: #fff;
-    color: #f5a623;
+  background-color: #fff;
+  color: #f5a623;
 }
 
 .activeButton {
-    background-color:#f5a623;
-    color: #fff;
+  background-color: #f5a623;
+  color: #fff;
 }
-  
 
 .buttonBlock {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttonNav {
-    font-family: 'Ubuntu';
-    font-size: 10px;
-    font-weight: 700;
-    padding: 10px 15px;
-    text-transform: uppercase;
-    color: #eca125;
-    background-color: #fff;
-    box-shadow: none;
-    border: 1px solid #eca125;
-    border-radius: 2px;
-    cursor: pointer;
-    line-height: 10px;
+  font-family: "Ubuntu";
+  font-size: 10px;
+  font-weight: 700;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  color: #eca125;
+  background-color: #fff;
+  box-shadow: none;
+  border: 1px solid #eca125;
+  border-radius: 2px;
+  cursor: pointer;
+  line-height: 10px;
 }
 
 .buttonNav:hover {
-    background-color: #eca125;
-    color: #fff;
+  background-color: #eca125;
+  box-shadow: 0 12px 24px rgba(243, 168, 45, 0.32);
+  color: #fff;
 }
 
 .buttonNavRight {
-    position: relative;
-    margin: 0 0 0 auto;
+  position: relative;
+  margin: 0 0 0 auto;
 }
 
 @media screen and (min-width: 768px) {
-    .wrapper {
-        padding: 33px 55px 0;
-    }
+  .wrapper {
+    padding: 33px 55px 0;
+  }
 
-    .testBlock {
-        background-color: #fff;
-        padding: 50px;
-    }
-    .progressBlock {
-        display: flex;
-        justify-content: center;
-        align-items: baseline;
-        width: 60%;
-        margin: 0 auto;
+  .testBlock {
+    background-color: #fff;
+    padding: 50px;
+  }
+  .progressBlock {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 60%;
+    margin: 0 auto;
+  }
+  .progress {
+    display: unset !important;
+  }
+  .symbolProgress {
+    display: none !important;
+    position: absolute;
+  }
 
-    }
-    .progress  {
-        display: unset !important;
-    }
-    .symbolProgress {
-        display: none !important; 
-        position: absolute;
-    }
+  .countBlock {
+    flex-basis: 20%;
+    margin: 0 auto;
+    border-bottom: none;
+    padding: 2px;
+  }
 
-    .countBlock {
-        flex-basis: 20%;
-        margin: 0 auto;
-        border-bottom: none;
-        padding: 2px;
-    }
+  .countItem {
+  }
 
-    .countItem {
-       
-    }
+  .questionTitle {
+    position: relative;
+    font-size: 24px;
+  }
 
-    .questionTitle {
-        font-size: 24px;
-    }
+  .answerButton {
+    margin-bottom: 0;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
 
-    .answerButton {
-        padding: 33px 0 ;
-        margin-bottom: 0;
-        font-size: 18px;
-        display: flex;
-        align-items: center;
-    }
+  .answerVariantText {
+    position: unset;
+    transform: translate(0, 0);
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 
-    .answerVariantText {
-        position: unset;
-        transform: translate(0, 0);
-        width: 35px;
-        height: 35px;
-        line-height: 35px;
-        margin-left: 15px;
-        margin-right: 15px;
-    }
+  .answerButtonText {
+    text-align: left;
+  }
 
-    .buttonBlock {
-        margin-top: 15px;
-    }
+  .buttonBlock {
+    margin-top: 15px;
+  }
 
-    .buttonNav {
-        padding: 15px 20px;
-        font-size: 11px;
-        line-height: 11px;
-    }
+  .buttonNav {
+    padding: 15px 20px;
+    font-size: 11px;
+    line-height: 11px;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .testBlock {
-        max-width: 657px;
-        margin: 0 auto;
-        box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
-    }
+  .testBlock {
+    max-width: 550px;
+    margin: 0 auto;
+    padding: 30px 7%;
+    box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
+  }
 
-    .buttonNav {
-        line-height: 18px;
-    }
+  .questionTitle:after {
+    content: "";
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 1px;
+    left: 50%;
+    bottom: -10px;
+    background-color: #f3a82d;
+    transform: translateX(-50%);
+  }
+  .answerButton:hover .answerVariantText {
+    background-color: #fff;
+    color: #f3a82d;
+  }
 
+  .answerButtonText {
+    font-size: 16px;
+  }
+
+  .buttonNav {
+    border-radius: 4px;
+  }
+
+  .buttonNav {
+    line-height: 18px;
+  }
 }

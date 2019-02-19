@@ -10,15 +10,26 @@ const QuestionButton = ({
 }) => {
   return (
     <div
-      className={answerId === _id ? `${style.activeButton} ${style.answerButton}` : `${style.defaultButton, style.answerButton}`}
+      className={
+        answerId === _id
+          ? `${style.activeButton} ${style.answerButton}`
+          : `${(style.defaultButton, style.answerButton)}`
+      }
       name={typeProfession}
       onClick={() => setAnswer(typeProfession, _id)}
     >
-    <div>
-    <span className={answerId === _id ? `${style.answerVariantText} ${style.activeAnswerVariantText}` : `${style.answerVariantText}`}>{typeProfession}</span>
-    </div>
-      
-      <span>{answerTitle}</span>
+      <div>
+        <span
+          className={
+            answerId === _id
+              ? `${style.answerVariantText} ${style.activeAnswerVariantText}`
+              : `${style.answerVariantText}`
+          }
+        >
+          {typeProfession}
+        </span>
+      </div>
+      <span className={style.answerButtonText}>{answerTitle}</span>
     </div>
   );
 };
