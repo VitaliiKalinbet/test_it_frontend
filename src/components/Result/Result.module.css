@@ -1,5 +1,4 @@
 .wrapper{
-    /* width: 280px; */
     padding: 0 15px;
     margin: 30px auto;
 }
@@ -16,9 +15,11 @@
     background-color: var(--macaroni-and-cheese);
     text-decoration: none;
 }
+
 .pieStyle{
     margin: 20px 0 ;
 }
+
 .hideOnModal{
     display: none;
 }
@@ -36,30 +37,25 @@
 
 }
 .canvasWrap{
-    width: 80%;
+    width: 60%;
     min-height: 129px;
 }
 
 .title{
     position: absolute;
-    top: 20px;
-    left: 15%;
+    width: 100%;
+    top: 5px;
+    left: 0%;
     font-size: 20px;
     color: var(--text-logo);
     margin: 0 auto;
 }
 
-
-
-
 @media (max-width: 768px) {
-
     .title{
-        top: 72px;
+        top: 52px;
         left: 28%;
     }
-
-
 }
 
 @media (min-width: 768px) {
@@ -70,8 +66,7 @@
     .title{
         color: var(--text-logo);
         text-align: center;
-        margin-bottom: 30px;
-        padding: 60px 0;
+        padding: 17px 0;
     }
     .hideOnModal{
         text-align: center;
@@ -101,18 +96,38 @@
     }
 }
 
-/* Mob */
-@media screen and (max-width: 468px) {
-        .title{
-            position: absolute;
-            top: 60px;
-            left: 22%;
-            right: 78%;
-            font-size: 20px;
-            color: var(--text-logo);
-            margin: 0 auto;
-   } 
+@media screen and (max-width: 588px) {
+    .title{
+        position: absolute;
+        top: 39px;
+        left: 29%;
+        right: 78%;
+        font-size: 19px;
+        color: var(--text-logo);
+        margin: 0 auto;
+    } 
     .wrapperShadow{
         padding: 15px;
     }
+}
+
+@media screen and (max-width: 468px) {
+        .title{
+            position: absolute;
+            top: 14px;
+            left: 24%;
+            right: 78%;
+            font-size: 17px;
+            color: var(--text-logo);
+            margin: 0 auto;
+        } 
+        .wrapperShadow{
+            padding: 15px;
+        }
   }
+
+@media screen and (max-width: 360px) {
+    .title{
+        left: 14%;
+    } 
+}
