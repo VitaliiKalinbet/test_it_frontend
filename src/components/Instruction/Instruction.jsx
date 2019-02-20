@@ -34,11 +34,13 @@ const Instructions = () => {
           <h1 className={style.title}> {instruction.title}</h1>
           <p>{instruction.post}</p>
         </div>
-        <div className={style.wrapper_btn}>
-          <NavLink className={style.btn} to="/test">
+
+        <NavLink to="/test" className={style.button_wrapper} >
+          <button className={style.button}>
             перейти к вопросам
-          </NavLink>
-        </div>
+          </button>
+        </NavLink>
+
       </div>
     </div>
   );

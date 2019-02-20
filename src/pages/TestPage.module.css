@@ -47,8 +47,6 @@
   font-weight: 700;
 }
 
-.questionBlock {}
-
 .questionTitle {
   display: inline-block;
   font-family: "Open Sans", sans-serif;
@@ -57,9 +55,6 @@
   color: #333333;
   padding: 15px 0 30px;
 }
-
-/* .answerBlock {
-} */
 
 .answerButton {
   position: relative;
@@ -142,7 +137,7 @@
 
   .testBlock {
     background-color: #fff;
-    padding: 50px;
+    padding: 1rem 1.5rem;
   }
 
   .progressBlock {
@@ -168,9 +163,6 @@
     border-bottom: none;
     padding: 2px;
   }
-
-  /* .countItem {
-  } */
 
   .questionTitle {
     position: relative;
@@ -212,9 +204,7 @@
 @media screen and (min-width: 1024px) {
   .testBlock {
     max-width: 750px;
-    margin-top: 1rem;
-    margin: 0 auto;
-    padding: 30px 7%;
+    margin: 2rem auto 3rem;
     box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
   }
 

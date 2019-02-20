@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
 import ProfessionDescr from '../ProfessionDescr/ProfessionDescr';
-import ButtonTryAgain from'./Button/ButtonTryAgain';
+import ButtonTryAgain from '../ButtonStartTestAgain/ButtonTryAgain';
 import FormToEmail from '../FormToEmail/FormToEmail';
-
 import Particles from "react-particles-js";
-// import { ResultContext } from '../context/ResultContext';
 import * as api from '../../services/api.js'
 import style from './Result.module.css';
 
-
-const part = {
-  particles: {
-    number: {
-      value: 30
-    },
-    size: {
-      value: 2
-    }
-  },
-  interactivity: {
-    events: {
-      onhover: {
-        enable: true,
-        mode: "repulse"
-      }
-    }
-  }
-};
+// const part = {
+//   particles: {
+//     number: {
+//       value: 10
+//     },
+//     size: {
+//       value: 1
+//     }
+//   },
+//   interactivity: {
+//     events: {
+//       onhover: {
+//         enable: true,
+//         mode: "repulse"
+//       }
+//     }
+//   },
+//   style: {
+//     height: '7rem'
+//   }
+// };
 
 const options = {
-  // maintainAspectRatio: false,
   responsive: true,
   legend: {
     position: "bottom",
@@ -42,11 +41,37 @@ const options = {
   }
 };
 
+ // for testing
+ const res =
+ {
+   result: {
+     tester: 60,
+     frontend: 30,
+     backend: 5,
+     manager: 5
+   },
+   profession: [
+     {
+       _id: "5c6872176ad71a1e451fb3f1",
+       typeProfession: "tester",
+       title: "ТЕСТИРОВЩИК",
+       descriptionTitle: "Описание профессии",
+       descriptionText: "В круг задач тестировщика программного обеспечения входит формирование стратегии проверки, создание тест-кейсов и тест-дизайна, репорт ошибок в случае их выявления, работа с документацией написание подробного отчета о процессе с указанием причин и обстоятельств возникших проблем.",
+       "dutiesTitle": "Обязанности",
+       "dutiesText": "В идеале испытатель ПО - это сотрудник, участвующий в разрешении технических проблем, связанных с разработкой софта, а не только обнаруживающий их. Это исследователь и инженер, задействованный во всех этапах жизненного цикла проекта.",
+       "perspectivesTitle": "Перспективы профессии",
+       "perspectivesText": "На сегодняшний день часть процессов тестирования ПО уже автоматизируется и отдается на аутсорсинг искусственному интеллекту.",
+       createdAt: "2019-02-16T20:27:03.307Z",
+       updatedAt: "2019-02-16T20:27:03.307Z",
+       "__v": 0
+     },
+   ]
+ }; 
+
 export default class Result extends Component {
 
   state = {
     email: '',
-    canvasImage: '',
     messageFromSendEmail: '',
   };
 
@@ -58,20 +83,21 @@ export default class Result extends Component {
 
   sendResultOnEmail = (event) => {
     event.preventDefault();
-    event.stopPropagation();
-    console.log(event);
+    // event.stopPropagation();
     const canvas = document.querySelector('canvas');
     const canvasImage = canvas.toDataURL();
-    console.log(canvasImage);
     const { email } = this.state;
     const { userAnswersId } = this.props;
-    console.log({ email: email, userAnswersId: userAnswersId, image: canvasImage });
     api
       .sendMail({ email: email, userAnswersId: userAnswersId, image: canvasImage })
-      .then(resp => this.setState({
-        messageFromSendEmail: resp.message,
+      .then(resp => {
+        console.log('resp', resp);
+        this.setState({
+        messageFromSendEmail: resp.data.message,
         email: '',
-      }))
+      }) 
+    })
+      
       .catch(err => console.log(err));
   };
 
@@ -93,30 +119,33 @@ export default class Result extends Component {
         }
       ]
     };
+
     return (
       <div className={style.wrapper}>
 
         <div className={style.wrapperShadow}>
 
-              <div className={style.wrapHead}>
-                  <div className={style.canvasWrap}>
-                    <Particles params={part} />
-                  </div>
-                  <div  className={style.title}> 
-                    <h1>Результаты <span className={style.hideOnModal}>тестирования</span></h1> 
-                  </div>
-              </div>
+          <div className={style.wrapHead}>
+            {/* <div className={style.canvasWrap}>
+              <Particles params={part} />
+            </div> */}
+              <h2 className={style.title}> 
+                Результаты&#8194;  
+                <span className={style.hideOnModal}> тестирования</span>
+              </h2>
+          </div>
 
           <div className={style.pieStyle}>
-              <Pie data={dataPie} options={options} />
+            <Pie data={dataPie} options={options} />
           </div>
+
         </div>
 
         {profession.map(prof => <ProfessionDescr key="prof._id" {...prof} />)}
         <ButtonTryAgain />
         <FormToEmail messageFromSendEmail={this.state.messageFromSendEmail} sendResultOnEmail={this.sendResultOnEmail} email={this.state.email} handelChange={this.handelChange} />
+
       </div>
     );
   }
 };
-

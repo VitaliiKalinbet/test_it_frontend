@@ -184,7 +184,7 @@ class TestPage extends Component {
                   className={`${style.buttonNav} ${style.buttonNavRight}`}
                 >
                   {currentQuestion !== totalQuestions ? test.next : test.results}
-                  <FontAwesomeIcon icon={faArrowRight} />
+                  &#8194;<FontAwesomeIcon icon={faArrowRight} />
                 </button>
               </div>
             </div>

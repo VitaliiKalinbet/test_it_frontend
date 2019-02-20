@@ -51,32 +51,28 @@
   line-height: 1.556;
 }
 
-.wrapper_btn {
-  width: 15rem;
-  padding: 1rem;
+.button_wrapper {
+  text-decoration: none;
+}
+
+.button {
+  display: block;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   cursor: pointer;
   background-color: var(--macaroni-and-cheese);
-}
-
-.btn {
-  display: block;
-  width: 100%;
   border: none;
+  outline: none;
   color: #fff;
   font-size: 1rem;
   font-family: "Ubuntu";
   text-align: center;
-  font-weight: 600;
-  text-decoration: none;
+  font-weight: 500;
   text-transform: uppercase;
+  padding: 1rem;
 }
 
-.btn:hover {
+.button:hover {
   background-color: var(--squash);
 }
 
