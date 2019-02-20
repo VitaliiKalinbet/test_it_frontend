@@ -1,6 +1,61 @@
 .wrapper{
-    width: 280px;
+    padding: 0 15px;
     margin: 30px auto;
+}
+
+.btn {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 25px;
+    font-weight: 800;
+    margin: 0 auto;
+    display: inline-block;
+    background-color: var(--macaroni-and-cheese);
+    text-decoration: none;
+}
+
+.pieStyle{
+    margin: 20px 0 ;
+}
+
+.hideOnModal{
+    display: none;
+}
+
+.wrapperShadow{
+    background-color: #fff;
+    padding: 40px;
+    margin: 0 auto;
+    box-shadow: 1px 2px 13px #00000040;
+}
+.wrapHead{
+    width: 100%;
+    position: relative;
+    background: linear-gradient(144deg, #6039aa, #000);
+
+}
+.canvasWrap{
+    width: 60%;
+    min-height: 129px;
+}
+
+.title{
+    position: absolute;
+    width: 100%;
+    top: 5px;
+    left: 0%;
+    font-size: 20px;
+    color: var(--text-logo);
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .title{
+        top: 52px;
+        left: 28%;
+    }
 }
 
 @media (min-width: 768px) {
@@ -8,6 +63,16 @@
         width: 660px;
         margin: 30px auto;
     }
+    .title{
+        color: var(--text-logo);
+        text-align: center;
+        padding: 17px 0;
+    }
+    .hideOnModal{
+        text-align: center;
+         display: inline-block;;
+    }
+
 }
 
 @media (min-width: 1024px) {
@@ -23,10 +88,46 @@
         box-shadow: 1px 2px 13px #00000040;
     }
     .title{
+        font-size: 20px;
         color: var(--text-logo);
         text-align: center;
         margin-bottom: 30px;
         padding: 60px 0;
-        background: linear-gradient(120deg, #6039aa, #180733);
     }
+}
+
+@media screen and (max-width: 588px) {
+    .title{
+        position: absolute;
+        top: 39px;
+        left: 29%;
+        right: 78%;
+        font-size: 19px;
+        color: var(--text-logo);
+        margin: 0 auto;
+    } 
+    .wrapperShadow{
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 468px) {
+        .title{
+            position: absolute;
+            top: 14px;
+            left: 24%;
+            right: 78%;
+            font-size: 17px;
+            color: var(--text-logo);
+            margin: 0 auto;
+        } 
+        .wrapperShadow{
+            padding: 15px;
+        }
+  }
+
+@media screen and (max-width: 360px) {
+    .title{
+        left: 14%;
+    } 
 }

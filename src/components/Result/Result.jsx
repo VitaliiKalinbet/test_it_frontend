@@ -1,51 +1,45 @@
 import React, { Component } from 'react';
 import { Pie } from 'react-chartjs-2';
 import ProfessionDescr from '../ProfessionDescr/ProfessionDescr';
+import ButtonTryAgain from'./Button/ButtonTryAgain';
 import FormToEmail from '../FormToEmail/FormToEmail';
+
+import Particles from "react-particles-js";
 // import { ResultContext } from '../context/ResultContext';
 import * as api from '../../services/api.js'
 import style from './Result.module.css';
 
-const title = ["Результаты тестирования"];
 
-const options = {
-  // maintainAspectRatio: false,
-  // responsive: true,
-  legend: {
-    position: "bottom",
-    labels: {
-      boxWidth: 20,
-      padding: 30,
-      fontSize: 16
+const part = {
+  particles: {
+    number: {
+      value: 30
+    },
+    size: {
+      value: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      }
     }
   }
 };
 
-// for testing
-const res =
-{
-  result: {
-    tester: 30,
-    frontend: 30,
-    backend: 20,
-    manager: 20
-  },
-  profession: [
-    {
-      _id: "5c6872176ad71a1e451fb3f1",
-      typeProfession: "tester",
-      title: "ТЕСТИРОВЩИК",
-      descriptionTitle: "Описание профессии",
-      descriptionText: "В круг задач тестировщика программного обеспечения входит формирование стратегии проверки, создание тест-кейсов и тест-дизайна, репорт ошибок в случае их выявления, работа с документацией написание подробного отчета о процессе с указанием причин и обстоятельств возникших проблем.",
-      "dutiesTitle": "Обязанности",
-      "dutiesText": "В идеале испытатель ПО - это сотрудник, участвующий в разрешении технических проблем, связанных с разработкой софта, а не только обнаруживающий их. Это исследователь и инженер, задействованный во всех этапах жизненного цикла проекта.",
-      "perspectivesTitle": "Перспективы профессии",
-      "perspectivesText": "На сегодняшний день часть процессов тестирования ПО уже автоматизируется и отдается на аутсорсинг искусственному интеллекту.",
-      createdAt: "2019-02-16T20:27:03.307Z",
-      updatedAt: "2019-02-16T20:27:03.307Z",
-      "__v": 0
-    },
-  ]
+const options = {
+  // maintainAspectRatio: false,
+  responsive: true,
+  legend: {
+    position: "bottom",
+    labels: {
+      boxWidth: 20,
+      padding: 10,
+      fontSize: 16
+    }
+  }
 };
 
 export default class Result extends Component {
@@ -101,11 +95,25 @@ export default class Result extends Component {
     };
     return (
       <div className={style.wrapper}>
+
         <div className={style.wrapperShadow}>
-          <h1 className={style.title}>{title}</h1>
-          <Pie data={dataPie} options={options} />
+
+              <div className={style.wrapHead}>
+                  <div className={style.canvasWrap}>
+                    <Particles params={part} />
+                  </div>
+                  <div  className={style.title}> 
+                    <h1>Результаты <span className={style.hideOnModal}>тестирования</span></h1> 
+                  </div>
+              </div>
+
+          <div className={style.pieStyle}>
+              <Pie data={dataPie} options={options} />
+          </div>
         </div>
+
         {profession.map(prof => <ProfessionDescr key="prof._id" {...prof} />)}
+        <ButtonTryAgain />
         <FormToEmail messageFromSendEmail={this.state.messageFromSendEmail} sendResultOnEmail={this.sendResultOnEmail} email={this.state.email} handelChange={this.handelChange} />
       </div>
     );

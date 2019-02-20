@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import style from './ProfessionDescr.module.css';
 
 const ProfessionDescr = ({descriptionText = "", descriptionTitle = "", dutiesText = "" , dutiesTitle = "", perspectivesText = "" , perspectivesTitle = "", title = "", typeProfession = "", }) => {
@@ -13,8 +12,6 @@ const ProfessionDescr = ({descriptionText = "", descriptionTitle = "", dutiesTex
 
             <h2 className={style.titleParagraph}> {perspectivesTitle} </h2>
             <p className={style.paragraph}>{perspectivesText}</p>
-
-            <Link to='/test' className={style.btn}>Начать тестирование заново</Link>
         </div>
     );
 };
