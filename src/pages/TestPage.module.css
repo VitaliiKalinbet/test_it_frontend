@@ -12,14 +12,13 @@
 .wrapper {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
+  max-height: 100vh;
   background-color: #f9f7fd;
 }
 
 .testBlock {
   padding: 1rem;
   margin: 1rem;
-  text-align: center;
 }
 
 .countBlock {
@@ -52,9 +51,15 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 15px;
+  text-align: center;
   color: #333333;
   padding: 15px 0 30px;
 }
+/* .answerBlock {
+  padding: 10px 0 0;
+  overflow: scroll;
+  height: 250px;
+} */
 
 .answerButton {
   position: relative;
@@ -86,6 +91,7 @@
   border-radius: 50%;
   line-height: 22px;
   font-family: "Ubuntu";
+  text-align: center;
   color: #fff;
   font-weight: 700;
   box-shadow: 1px 2px 3px rgba(32, 32, 32, 0.2);
@@ -96,6 +102,9 @@
   color: #f5a623;
 }
 
+.answerButtonText {
+  text-align: left;
+}
 .activeButton {
   background-color: #f5a623;
   color: #fff;
@@ -134,10 +143,12 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .testBlock {
     background-color: #fff;
     padding: 1rem 1.5rem;
+  }
+  .wrapper {
+    overflow: hidden;
   }
 
   .progressBlock {
