@@ -18,7 +18,9 @@
 
 .testBlock {
   padding: 1rem;
-  margin: 1rem;
+  margin: 0 0 1rem;
+  height: 80vh;
+  overflow: scroll;
 }
 
 .countBlock {
@@ -48,6 +50,7 @@
 
 .questionTitle {
   display: inline-block;
+  width: 100%;
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   font-size: 15px;
@@ -55,11 +58,6 @@
   color: #333333;
   padding: 15px 0 30px;
 }
-/* .answerBlock {
-  padding: 10px 0 0;
-  overflow: scroll;
-  height: 250px;
-} */
 
 .answerButton {
   position: relative;
@@ -111,7 +109,10 @@
 }
 
 .buttonBlock {
-  position: relative;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   display: flex;
   justify-content: space-between;
 }
@@ -122,19 +123,18 @@
   font-weight: 700;
   padding: 10px 15px;
   text-transform: uppercase;
-  color: #eca125;
-  background-color: #fff;
+  color: #333333;
+  background-color: #ffc25d;
   box-shadow: none;
-  border: 1px solid #eca125;
-  border-radius: 2px;
+  border: none;
   cursor: pointer;
   line-height: 10px;
+  flex-basis: 50%;
 }
 
 .buttonNav:hover {
   background-color: #eca125;
   box-shadow: 0 12px 24px rgba(243, 168, 45, 0.32);
-  color: #fff;
 }
 
 .buttonNavRight {
@@ -146,9 +146,6 @@
   .testBlock {
     background-color: #fff;
     padding: 1rem 1.5rem;
-  }
-  .wrapper {
-    overflow: hidden;
   }
 
   .progressBlock {
@@ -178,6 +175,7 @@
   .questionTitle {
     position: relative;
     font-size: 24px;
+    text-align: center;
   }
 
   .answerButton {
@@ -203,17 +201,34 @@
 
   .buttonBlock {
     margin-top: 15px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
   }
 
   .buttonNav {
+    color: #f3a82d;
+    background-color: #fff;
+    flex-basis: unset;
+    box-shadow: none;
+    border: 1px solid #eca125;
+    border-radius: 4px;
     padding: 15px 20px;
     font-size: 11px;
     line-height: 11px;
+  }
+
+  .buttonNav:hover {
+    background-color: #eca125;
+    box-shadow: 0 12px 24px rgba(243, 168, 45, 0.32);
+    color: #fff;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .testBlock {
+    overflow: unset;
+    height: unset;
     max-width: 750px;
     margin: 2rem auto 3rem;
     box-shadow: 2px 4px 9px rgba(23, 23, 87, 0.15);
@@ -240,11 +255,25 @@
     font-size: 16px;
   }
 
-  .buttonNav {
-    border-radius: 4px;
+  .buttonBlock {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
   }
 
   .buttonNav {
+    color: #f3a82d;
+    background-color: #fff;
+    flex-basis: unset;
+    box-shadow: none;
+    border: 1px solid #eca125;
+    border-radius: 4px;
     line-height: 18px;
+  }
+
+  .buttonNav:hover {
+    background-color: #eca125;
+    box-shadow: 0 12px 24px rgba(243, 168, 45, 0.32);
+    color: #fff;
   }
 }
