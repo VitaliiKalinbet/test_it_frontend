@@ -7,7 +7,7 @@ import Particles from "react-particles-js";
 const part = {
   particles: {
     number: {
-      value: 50
+      value: 30
     },
     size: {
       value: 2
@@ -23,24 +23,43 @@ const part = {
   }
 };
 
+const partDesktop = {
+  particles: {
+    number: {
+      value: 200
+    },
+    size: {
+      value: 2
+    }
+  },
+  interactivity: {
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      }
+    }
+  }
+};
 const Instructions = () => {
   return (
     <div className={style.pageWrap}>
       <div className={style.instructWrap}>
         <div className={style.instructImage}>
-          <Particles params={part} className={style.image} />
+          {window.innerHeight < 768 ? (
+            <Particles params={part} className={style.image} />
+          ) : (
+            <Particles params={partDesktop} className={style.image} />
+          )}
         </div>
         <div className={style.post}>
           <h1 className={style.title}> {instruction.title}</h1>
           <p>{instruction.post}</p>
         </div>
 
-        <NavLink to="/test" className={style.button_wrapper} >
-          <button className={style.button}>
-            перейти к вопросам
-          </button>
+        <NavLink to="/test" className={style.button_wrapper}>
+          <button className={style.button}>перейти к вопросам</button>
         </NavLink>
-
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
 import axios from "axios";
 
-
 //axios.defaults.baseURL = "http://localhost:41410/api/v1";
-axios.defaults.baseURL = "http://194.44.175.186:41410/api/v1";
+axios.defaults.baseURL = "http://testit.co.ua/api/v1/";
 axios.defaults.headers.put["Content-Type"] = "application/json";
 axios.defaults.headers.get["Content-Type"] = "application/json";
 
@@ -17,7 +16,7 @@ export const setResuts = async data => {
 };
 
 export const getUserResults = async id => {
-  const response = axios.get(`/result/${id}`)
+  const response = axios.get(`/result/${id}`);
   return response;
 };
 

@@ -7,10 +7,15 @@ import style from "./Home.module.css";
 const part = {
   particles: {
     number: {
-      value: 50
+      value: 40
     },
     size: {
       value: 2
+    },
+    shape: {
+      type: {
+        value: "star"
+      }
     }
   },
   interactivity: {
@@ -27,15 +32,17 @@ const Home = () => {
   return (
     <div className={style.pageWrap}>
       <div className={style.canvasWrap}>
-        <Particles params={part} />
+        <Particles
+          params={part}
+          height={window.innerHeight}
+          width={window.innerHeight}
+        />
       </div>
       <div className={style.postWrap}>
         <h1 className={style.title}> {home.title}</h1>
         <p className={style.post}>{home.post}</p>
-        <NavLink to="/instruction" className={style.button_wrapper} >
-          <button className={style.button}>
-            начать тестирование
-          </button>
+        <NavLink to="/instruction" className={style.button_wrapper}>
+          <button className={style.button}>начать тестирование</button>
         </NavLink>
       </div>
     </div>
