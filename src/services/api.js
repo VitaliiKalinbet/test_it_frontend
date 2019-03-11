@@ -1,7 +1,7 @@
 import axios from "axios";
 
-//axios.defaults.baseURL = "http://localhost:41410/api/v1";
-axios.defaults.baseURL = "http://testit.co.ua/api/v1/";
+// axios.defaults.baseURL = "http://localhost:41410/api/v1";
+axios.defaults.baseURL = "https://testit.co.ua/api/v1/";
 axios.defaults.headers.put["Content-Type"] = "application/json";
 axios.defaults.headers.get["Content-Type"] = "application/json";
 

@@ -85,7 +85,7 @@ export default class Result extends Component {
     event.preventDefault();
     // event.stopPropagation();
     const canvas = document.querySelector('canvas');
-    const canvasImage = canvas.toDataURL();
+    const canvasImage = canvas.toDataURL("image/png");
     const { email } = this.state;
     const { userAnswersId } = this.props;
     api
