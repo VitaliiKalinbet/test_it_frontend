@@ -2,7 +2,7 @@
 
 # short rules for working with this repository for developers
 1) Клонируете себе на машину репозиторий: 
-1.1) git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
+## 1.1) git clone https://github.com/VitaliiKalinbet/test_it_frontend.git
 2) Закрываете консоль и открываете ее в созданной после клонирования папке (или cd test_it_frontend). Создаете ветку с названием компонента который будете делать, например: 
 2.1) git checkout -b Home
 2.2) Чтобы установить все модули, на уровне с package.json запускаете консоль и команда:
